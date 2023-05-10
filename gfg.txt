@@ -1,0 +1,7 @@
+This is a simple test for writing into a test fileAppend this text1 stream of text\n Append this text1 stream of text
+ Append this text1 stream of text
+This is another awesome testing text This is another way to append to a file
+This is some awesome testing text
+This is another awesome testing text 
+This is some awesome testing text
+This is another awesome testing text 
