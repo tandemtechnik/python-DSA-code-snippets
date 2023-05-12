@@ -295,7 +295,7 @@ Given an array of integers, you need to check if any value appears more than onc
 # print(containsDuplicate(nums))
 # ====================================================================================
 """
-PALINDROME VALDATION
+PALINDROME VALIDATION
 Palindrome words are words that are read the same backward as forward.
 For example, mom, dad, and madam are palindrome words.
 """
@@ -564,7 +564,7 @@ the most common prefix among the first two items is “flo”
 # print(longestCommonPrefix(strs))
 # =========================================================================================
 """
-GROUP ELEMENTS OF SAME INDIXES
+GROUP ELEMENTS OF SAME INDEXES
 To group elements of the same index, you will initially have two or more lists inside a list like
 [[a, b], [c, d]]. To group the elements of these lists, you need to create two new lists to store
 the elements of both the lists at index 0 [a, c] and index 1 [b, d]. That is the meaning of grouping

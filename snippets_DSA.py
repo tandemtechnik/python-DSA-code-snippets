@@ -1,7 +1,9 @@
-# # PALINDRUM
-# # function to check string is palindrome or not
+"""
+PALINDRUM
+Function to check string is palindrome or not
+"""
 # def isPalindrome(str):
-#       for i in range(0, int(len(str)/2)): # Run loop from 0 to len/2
+#         for i in range(0, int(len(str)/2)): # Run loop from 0 to len/2
 #             if str[i] != str[len(str)-i-1]:
 #                 return False
 #             return True
@@ -33,7 +35,7 @@
 #     print("Not a palindrome!")
 # =========================================================================
 
-# # NESTED LOOPS
+# NESTED LOOPS
 # n = 5
 # m = 2
 # for i in range(n):
@@ -46,6 +48,7 @@
 # def modify_str():
 #     str1 = "I love Python"
 #     str1.replace("love", "enjoy").split()
+#     # str1 = str1.replace("love", "enjoy").split()
 #     return str1
 # print(modify_str())
 # # ================================
@@ -54,19 +57,6 @@
 #     str1 = str1.replace("love", "enjoy").split()
 #     return str1
 # print(modify_str())
-# =============================================================================
-
-# CODING CHALLENGE ----- solve
-# collect all the even numbers into a variable
-# compare which elements in the variable are in the targets list
-# ***********************************************************
-# numbers = [45, 24, 22, 1, 45, 2, 12, 13, 16, 10, 0, -7]
-# targets = [23, 1, -4, 15, 11, 8, 99, 45, 69, 12]
-# for idx in range(len(numbers)):
-#     if numbers[idx] % 2 == 0:
-#         evens = numbers[idx]
-#         # print(evens)
-#         print([x for x in evens if x in targets])
 # =============================================================================
 
 # MATCHING CHARACTERS

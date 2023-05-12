@@ -29,13 +29,13 @@
 #     return c
 # d=common(a,b)
 # print(d)
-#
+# ***********************************************************
 # def func(arr1, arr2):
 #     return [x for x in arr1 if x in arr2]
 # arr1 = [1, 2, 3]
 # arr2 = [4, 3, 2, 1]
 # print(func(arr1, arr2))
-# # =============================================
+# # *************************************************************
 # # #Defining function to check for common elements in two lists
 # x=[2,3,4,5]
 # y=[3,5,7,9]
@@ -123,6 +123,8 @@ Given an unsorted array of integers, find the number of subarrays having a sum e
 # # print(el_2)
 # print(output)
 # =============================
+
+# SUM OF CONSECUTIVE TWO ELEMENT IN ARRAY
 # lst = [1, 5, 7, 8, 4]
 # total = 0
 # for i, j in zip(lst, lst[1:]):
@@ -478,6 +480,22 @@ Given an unsorted array of integers, find the number of subarrays having a sum e
 #     C.append(minimum)
 #     A.remove(minimum)
 # print(C)
+# =========================================================================================
+"""
+NUMBER GUESSING GAME
+Implement Binary Search Method
+"""
+# import random
+# secret_number = random.randint(1, 50)
+# while True:
+#     guess = int(input("Guess the number between 1 and 50: "))
+#     if guess == secret_number:
+#         print("Congratulations! You got it!")
+#         break
+#     elif guess < secret_number:
+#         print("Too low! Try again.")
+#     else:
+#         print("Too high! Try again.")
 # ==============================================================================
 
 # # BUBBLE SORT has efficiency based on iterations count
@@ -494,9 +512,8 @@ Given an unsorted array of integers, find the number of subarrays having a sum e
 # A = [9, 8, 7, 6, 5, 4, 3, 2, 1]
 # print(bubble_sort(A))
 # ======================================================================================
-
-# # MERGE SORT:
 """
+MERGE SORT:
 Sorts a list in ascending order
 Returns a new sorted list
 Divide: Find the midpoint of the list and divide into sublists
@@ -528,8 +545,10 @@ Combine: Merge the sorted sublists created in the previous step
 # sorted_nums = merge_sort(lst)
 # print(sorted_nums)
 # =====================================================================================
-
-# #QUICK SORT: More efficient than other sort methods by computational cost
+"""
+#QUICK SORT: 
+More efficient than other sort methods by computational cost
+"""
 # def quicksort(values):
 #     if len(values) <= 1:
 #         return values

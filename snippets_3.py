@@ -168,7 +168,7 @@
 # dice = Dice()
 # print(dice.roll_dice())
 # ===========================================================================
-
+# GET INPUT FROM USER
 # # Get a list as input from user
 # lst = ""
 # n = int(input("Enter no of elements: "))
@@ -683,7 +683,7 @@ import os
 # print(f"Your total is : ${total: .2f}")
 # ==========================================
 
-# Concession stand program
+# CONCESSION STAND PROGRAM
 # menu = {"pizza": 3.00,
 #                "nachos": 4.50,
 #                "popcorn": 6.00,
