@@ -1,5 +1,6 @@
 """
-COMMON ELEMENTS
+COMMON EVEN NUMBER ELEMENTS
+---------------------------
 LIST INTERSECTION
 CUSTOM ITERATIONS --- BRUTE FORCE
 CODING CHALLENGE ----- solve
@@ -21,7 +22,7 @@ And also, just show True/False
 # # common_values = [i for i in even_nums if i not in lst]
 # # common_values = [i for i in nums if i in lst]
 # # print(common_values)
-# print(even_nums, common_values)
+# print(f"Even numbers: {even_nums}, Common values: {common_values}")
 # # ***************************************
 # # if set(even_nums).intersection(lst):
 # #     print('Lists have elements in common')
@@ -30,7 +31,8 @@ And also, just show True/False
 # ***************************************************
 """
 LISTS SUBSET -- INTERSECTION
-Given two lists A and B, write a Python program to Check if list A is contained in list B without breaking A’s order. 
+Given two lists A and B, write a Python program to Check if list A is contained in list B 
+without breaking A’s order. 
 """
 # def is_sublist(A, B):
 #     if not A:
@@ -60,12 +62,14 @@ a function to find intersection of two lists
 #             #if true, add the common element to the new list
 #             lst3.append(value)
 #     #we can shorten the four lines of code above
-#     #using this code - lst3 = [value for value in lst1 if value in lst2]
+#     #using this code ----
+#     # lstx = [value for value in lst1 if value in lst2]
+#     # return lstx
 #     return lst3
 #
 # # example of two lists to test the intersection program
-# lst1 = [1,2,2,1]
-# lst2 = [2,2]
+# lst1 = [1,2,5,1]
+# lst2 = [5,2]
 # # print the final output
 # print(intersection(lst1, lst2))
 # ======================================================================================
@@ -75,11 +79,8 @@ a function to find intersection of two lists
 # output = []
 # for i in range(len(lis)-2):
 #     left = lis[i]
-#     # print(left)
 #     this = lis[i+1]
-#     # print(this)
 #     right = lis[i+2]
-#     # print(right)
 #     if this < left and this < right:
 #         output.append(this)# [3,2,1]
 # print(output)
@@ -99,18 +100,6 @@ Finding the sum of consecutive two elements in an array of numbers
 #     sum_ += i
 # print(output, sum_)
 # ************************************
-"""
-SNIPPETS_4: 127
-"""
-# lst = [1, 5, 7, 8, 4]
-# total = 0
-# for i, j in zip(lst, lst[1:]):
-#     add_ = i + j
-# #    print(i, j)
-# #   print(add_)
-#     total += add_
-# print(total)
-# # =======================================================================
 
 # # Combining consecutive strings together:
 # lis = ["apple", "orange", "pear", "durian"]
@@ -120,4 +109,80 @@ SNIPPETS_4: 127
 #     next = lis[i+1]
 #     output.append(this + " " + next)# ["apple orange", "orange pear", "pear durian"]
 # print(output)
+# ***********************************************
 
+# # SUM OF CONSECUTIVE TWO ELEMENT IN ARRAY ----- TURING CODING CHALLENGE
+# lst = [1, 5, 7, 8, 4]
+# total = 0
+# for i, j in zip(lst, lst[1:]):
+#     add_ = i + j
+# #    print(i, j)
+# #   print(add_)
+#     total += add_
+# print(total)
+# ========================================================
+
+# # SUM OF CONSECUTIVE TWO ELEMENT IN ARRAY
+# # my_list = [41, 27, 53, 12, 29, 32, 16]
+# my_list = [1, 5, 7, 8, 4]
+# # print("The list is :")
+# # print(my_list)
+# total = 0
+# # my_result = [a + b for a, b in zip(my_list, my_list[1:] + [my_list[0]])]
+# sums = [a + b for a, b in zip(my_list, my_list[1:] + [my_list[0]])]
+# for i in sums:
+#     total += i
+# # print(f"Result: {my_result}. Total: {sum}")
+# print("Sums: ",sums)
+# print("Total: ",total)
+
+# ==================================================================
+
+# # Turing coding challenge
+# input = "*************"
+# el_1 = input[:2]
+# el_2 = input[3:]
+# output = [el_1.replace("*", "-")] + [el_2]
+# # print(el_1)
+# # print(el_2)
+# print(output)
+# *****************************************
+
+# # CODING CHALLENGE
+# age = 17
+# if age >= 18 or ...:
+#     print("I'm going to drive on my own")
+# else:
+#     print("I need a driver")
+# =====================================================================
+
+# from itertools import dropwhile
+# def func(array):
+#     filtered_list = dropwhile(lambda x:x < 0, array)
+#     return filtered_list
+# numz = [-3, -2, -1, 0, 1, 2, 3]
+# result = func(numz)
+# next(result)
+# print(next(result))
+# *********************************
+# def zip_func(list1, list2):
+#     zipped = zip(list1, list2)
+#     result = [(a, b) for a, b in zipped if a != b]
+#     return *result,
+# list1 = [1, 2, 3, 4, 5]
+# list2 = [1, 3, 3, 4, 6]
+# output = zip_func(list1, list2)
+# print(output)
+# ***************************************
+# langs = ["java", "C++", "Rust"]
+# # for lang in langs:
+# langs.append("Python")
+# print(langs)
+# ****************************************
+
+# def my_func(value):
+#     if value == 5:
+#         return ["Python"]
+#     else:
+#         yield from range(value)
+# print(list(my_func(5)))

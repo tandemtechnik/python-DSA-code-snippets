@@ -1,4 +1,4 @@
-# ==========================================================================
+# # ==========================================================================
 # # REPEATED SUBSTRING PATTERN using Python
 # def repeatedSubstringPattern(s):
 #         string = (s + s)[1:-1]
@@ -41,16 +41,16 @@
 #     count = Counter(s)
 #     for i, j in enumerate(s):
 #         if count[j] == 1:
-#             return i
+#             return i # f"First unique character is '{j}', at position index of '{i}'"
 #     else:
 #         return -1
 # print(firstUniqueChar("ammannkkarwal"))
 # ========================================================================
 """"
-HAMMING DISTANCE BETWEEN TWO CHARACTERS ------ is a measure of the difference between two strings of equal length.
-Given two integers, calculate the number of positions where the corresponding bits are different.
-For two integers: 1 and 4. The binary representation of 1 is 0001, and 4 is 0100.
-There are two positions where the corresponding bits of the integers are different. So the output is 2.
+# HAMMING DISTANCE BETWEEN TWO CHARACTERS ------ is a measure of the difference between two strings of equal length.
+# Given two integers, calculate the number of positions where the corresponding bits are different.
+# For two integers: 1 and 4. The binary representation of 1 is 0001, and 4 is 0100.
+# There are two positions where the corresponding bits of the integers are different. So the output is 2.
 """""
 # def hammingDistance(x, y):
 #     xor = x ^ y
@@ -457,16 +457,17 @@ In this situation, the output should be 0,1 because the sum of 1 at index 0 and 
 # target = 11
 # print(twosum(nums, target))
 # **********************************************
-# def threesum(nums, target):
+# def foursum(nums, target):
 #     length = len(nums)
 #     for i in range(length):
 #         for j in range(i + 1, length):
 #             for x in range(i + 1, length):
-#                 if nums[i] + nums[j] + nums[x] == target:
-#                     return [i, j, x]
-# nums = [3, 4, 1, 7]
-# target = 12
-# print(threesum(nums, target))
+#                 for y in range(i + 1, length):
+#                     if nums[i] + nums[j] + nums[x] + nums[y] == target:
+#                         return [i, j, x, y]
+# nums = [3, 4, 1, 7, 4, 9, 2]
+# target = 10
+# print(foursum(nums, target))
 # ===========================================================================================
 """
 SQUARE ROOT
@@ -579,5 +580,7 @@ the elements of the same indices.
 #         outputLists[index].append(inputLists[j][index])
 #     index += 1
 # a, b, c = outputLists[0], outputLists[1], outputLists[2]
-# print(a, b, c)
+# print(f"{a} \n {b} \n {c}")
+
 # =================================================================================
+

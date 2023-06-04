@@ -61,7 +61,6 @@
 # print(commonelems(list3,list4))
 # https://www.tutorialspoint.com/python-check-if-two-lists-have-any-element-in-common
 # =========================================================================================
-
 """
 SUBARRAY SUM EQUAL K:
 Given an unsorted array of integers, find the number of subarrays having a sum exactly equal to a given number k.
@@ -75,7 +74,6 @@ Given an unsorted array of integers, find the number of subarrays having a sum e
 #             if summ == k:
 #                 res += 1
 #     return res
-#
 # arr = [10, 2, -2, -20, 10]
 # n = len(arr)
 # k = -10
@@ -108,47 +106,12 @@ Given an unsorted array of integers, find the number of subarrays having a sum e
 # for num in my_list:
 #     if num not in uniques:
 #         uniques.append(num)
+# # print(uniques)
 #     else:
 #         duplicates.append(num)
 # print(f"uniques: {uniques}")
 # print(f"Duplicates:  {duplicates}")
 # ====================================================================================
-
-# # Turing coding challenge
-# input = "*************"
-# el_1 = input[:2]
-# el_2 = input[3:]
-# output = [el_1.replace("*", "-")] + [el_2]
-# # print(el_1)
-# # print(el_2)
-# print(output)
-# =============================
-
-# SUM OF CONSECUTIVE TWO ELEMENT IN ARRAY
-# lst = [1, 5, 7, 8, 4]
-# total = 0
-# for i, j in zip(lst, lst[1:]):
-#     add_ = i + j
-#     # print(i, j)
-#     # print(add_)
-#     total += add_
-# print(total)
-# # ========================
-# # OTHER FORMATS BELOW
-# >>> l = [1,2,3,4,5,6]
-#
-# >>> zip(l,l[1:])
-# [(1, 2), (2, 3), (3, 4), (4, 5), (5, 6)]
-#
-# >>> zip(l,l[1:])[::2]
-# [(1, 2), (3, 4), (5, 6)]
-#
-# >>> [a+b for a,b in zip(l,l[1:])[::2]]
-# [3, 7, 11]
-#
-# >>> ["%d + %d = %d" % (a,b,a+b) for a,b in zip(l,l[1:])[::2]]
-# ['1 + 2 = 3', '3 + 4 = 7', '5 + 6 = 11']
-# ================================================================================
 
 # LIST DIVIDE BY N
 # l = [1,2,3,4,5,6]
@@ -355,7 +318,7 @@ Given an unsorted array of integers, find the number of subarrays having a sum e
 # LINEAR SEARCH
 # # #Linear Search for target in data elements list
 # data = [2,4,5,7,8,9,12,14,17,19,22,25,27,28,33,37]
-# target = 5
+# target = 27
 # def linear_search(data, target):
 #     for i in range(len(data)):
 #         if data[i] == target:
@@ -367,14 +330,14 @@ Given an unsorted array of integers, find the number of subarrays having a sum e
 
 # # Iterative Binary Search
 # data = [2,4,5,7,8,9,12,14,17,19,22,25,27,28,33,37]
-# target = 4
+# target = 17
 # def bs_iter(data, target):
 #     low = 0
 #     high = len(data) - 1
 #     while low <= high:
 #         mid = (low+high) // 2
 #         if target == data[mid]:
-#             return True
+#             return True, data.index(target)
 #         elif target < data[mid]: # if target in low half
 #             high = mid - 1
 #         else: # if target in high half
@@ -404,7 +367,7 @@ Given an unsorted array of integers, find the number of subarrays having a sum e
 # print(x)
 # ****************         ***************           *************
 
-# # ITERATIVE BINARY ARRAY
+# # ITERATIVE BINARY ARRAY SEARCH
 # def binary_itr(arr, start, end, target):
 #     while start <= end:
 #         mid = (start + end) // 2
@@ -413,10 +376,10 @@ Given an unsorted array of integers, find the number of subarrays having a sum e
 #         elif arr[mid] > target: # If target is on left side. Begin search from midway left-wards
 #             end = mid - 1
 #         else:
-#             return f"True. Found at index {mid}" # If target matches mid. Return mid
+#             return f"True. Found at index {arr.index(target)}" # If target matches mid. Return mid
 #     return "Not found"
 # arr = [2, 5, 8, 10, 16, 22, 25] # List is sorted
-# target = 10
+# target = 22
 # result = binary_itr(arr, 0, len(arr) - 1, target)
 # print(result)
 # ========================================================================
@@ -463,23 +426,6 @@ Given an unsorted array of integers, find the number of subarrays having a sum e
 # numbers = [1,2,3,4,5,6,7,8,9,10]
 # result = recursive_binary_search(numbers, 6)
 # verify(result)
-
-# ================================================================================================
-# ARRAYS basically a python list
-# =================================================
-
-# # SORT by Brute Force Method
-# A = [-5, -23, 5, 0, 25, -6, 23, 67]
-# # A = [2,0,2,1,1,0]
-# C = []
-# while A:
-#     minimum =A[0]
-#     for x in A:
-#         if x < minimum:
-#             minimum = x
-#     C.append(minimum)
-#     A.remove(minimum)
-# print(C)
 # =========================================================================================
 """
 NUMBER GUESSING GAME
@@ -496,6 +442,22 @@ Implement Binary Search Method
 #         print("Too low! Try again.")
 #     else:
 #         print("Too high! Try again.")
+# ================================================================================================
+# ARRAYS basically a python list
+# =================================================
+
+# # ARRAY SORT by Brute Force Method
+# A = [-5, -23, 5, 0, 25, -6, 23, 67]
+# # A = [2,0,2,1,1,0]
+# C = []
+# while A:
+#     minimum =A[0]
+#     for x in A:
+#         if x < minimum:
+#             minimum = x
+#     C.append(minimum)
+#     A.remove(minimum)
+# print(C)
 # ==============================================================================
 
 # # BUBBLE SORT has efficiency based on iterations count

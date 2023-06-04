@@ -381,7 +381,7 @@ import os
 # result = find_max(numbers)
 # print(result)
 #======================================================
-# # Find minimum numbers function
+# # Find minimum number function
 # numbers = [12, 11, 5, 87, 6, 34]
 # def find_min(numbers):
 #     minimum = numbers[0]
@@ -418,11 +418,11 @@ import os
 
 # # Count number of words that contain letter "s"
 # my_str = "Oranges and lemons, Say the bells of St. Clement's. " \
-#        "You owe me three farthings, Say the bells of St. Martin's"
+#         "You owe me three farthings, Say the bells of St. Martin's"
 # def count_l(str):
 #     c = 0
 #     for i in str.split():
-#         if "s" in i:
+#         if "s" in i.lower():
 #             c = c + 1
 #         else:
 #             pass

@@ -124,14 +124,14 @@ Maximum value in a python list or infact in any iterable without using max() fun
 # print(max_num)
 # my_list = [2,3,1,4,6,7,99,999,88]
 # *************************************
-## MINIMUM VALUE
+# MINIMUM VALUE
 # min_num = None
 # for num in my_list:
 #     if min_num is None or num < min_num:
 #         min_num = num
 # print(min_num)
 # ***************************************
-## MINIMUM VALUE WITH FUNCTION
+# MINIMUM VALUE WITH FUNCTION
 # def minimum(list):
 #     curr_min = list[0]
 #     for num in list:
@@ -180,7 +180,7 @@ Also if you want to find the index of the resulting max,
 #     return minimum_index
 # a = [23, 76, 45, 20, 7, 65, 15, 54]
 # print(minimum(a))
-#======================================================================================
+# ======================================================================================
 """
 DISTANCE BETWEEN TWO LOCATIONS
 Calculating the distance between two locations helps companies like Swiggy and Zomato calculate the delivery time
@@ -468,13 +468,9 @@ Create a dictionary from 2 lists
 #
 # print(user1.greet())
 # print(user2.greet())
+# ************************************************************
 
-# class student:
-#     def __init__(self, name, age):
-#         self.name = name
-#         self.age = age
-# *************************************************************
-# class student_marks:
+# class Student_marks(object):
 #     def __init__(self, name, english, maths, science, sst):
 #         self.name = name
 #         self.english = english
@@ -485,11 +481,11 @@ Create a dictionary from 2 lists
 #     def calculate_avg_marks(self):
 #         total_marks = self.english + self.maths + self.science + self.sst
 #         avg_marks = total_marks / 4
-#         return avg_marks
-# student1 = student_marks("Ashwini", 20, 12, 14, 15)
-# student2 = student_marks("Ashu", 10, 18, 16, 9)
-# student3 = student_marks("Sonu", 16, 14, 20, 11)
-# student4 = student_marks("Sushant", 20, 20, 20, 20)
+#         return self.name, avg_marks
+# student1 = Student_marks("Ashwini", 20, 12, 14, 15)
+# student2 = Student_marks("Ashu", 10, 18, 16, 9)
+# student3 = Student_marks("Sonu", 16, 14, 20, 11)
+# student4 = Student_marks("Sushant", 20, 20, 20, 20)
 #
 # print(student1.calculate_avg_marks())
 # print(student2.calculate_avg_marks())
@@ -557,11 +553,11 @@ Create a dictionary from 2 lists
 # i = j = "Python"
 # i += "rocks!"
 # print(i, j)
-# # Pythonrocks!, Python
-# # j is an instance of i both pointing to same address
+# Pythonrocks!, Python
+# j is an instance of i both pointing to same address
 # ===========================================================================
 
-# Fizz Buzz
+# # Fizz Buzz
 # for num in range(1, 16):
 #     if num % 5 == 0 and num % 3 == 0:
 #         print("FIZZBUZZ")
@@ -571,3 +567,29 @@ Create a dictionary from 2 lists
 #         print("BUZZ")
 #     else:
 #         print(num)
+# =======================================================================
+
+# from bisect import bisect
+# def grade(score, breakpoints=[60, 70, 80, 90], grades='FDCBA'):
+#     i = bisect(breakpoints, score)
+#     return grades[i]
+# results = [grade(score) for score in [33, 99, 77, 70, 89, 90, 100]]
+# print(results)
+# ======================================================================
+
+# CONSECUTIVE ONES OCCURENCES
+# def count_consecutive_ones(lst):
+#     count = 0
+#     total = 0
+#     for num in lst:
+#         if num == 1:
+#             count += 1
+#             if count == 2:
+#                 total += 1
+#         else:
+#             count = 0
+#     return total
+# elements = input("Enter list elements (separated by space): ").split()
+# my_list = [int(elem) for elem in elements]
+# occurrences = count_consecutive_ones(my_list)
+# print("Occurrences of two consecutive ones:", occurrences)

@@ -35,7 +35,7 @@ Function to check string is palindrome or not
 #     print("Not a palindrome!")
 # =========================================================================
 
-# NESTED LOOPS
+# # NESTED LOOPS
 # n = 5
 # m = 2
 # for i in range(n):
@@ -80,18 +80,19 @@ Function to check string is palindrome or not
 # x = find_fxdp(A)
 # print(x)
 # =====================================================================================
-
-# Calculate length of string
-# input_str = "TandemTechniques"
-# print(len(input_str))
-# # Interative solution (Brute Force)
+"""
+CALCULATE LENGTH OF A STRING
+Interative solution (Brute Force)
+"""
 # def str_iter(input_str):
 #     count = 0
 #     for i in range(len(input_str)):
 #         count += 1
 #     return count
+# input_str = "TandemTechniques"
 # x = str_iter(input_str)
 # print(x)
+# # print(len(input_str))
 # ============================================================================
 
 # # ADD NUMBERS FROM TWO LISTS
@@ -104,7 +105,7 @@ Function to check string is palindrome or not
 #             result.append(l1[i] + l2[i])
 #         return result
 # l1 = [3,3,3]
-# l2 = [2,1,3]
+# l2 = [2,1,8]
 # sol = Solution()
 # ans = sol.addnums(l1, l2)
 # print(ans)
@@ -134,7 +135,7 @@ Function to check string is palindrome or not
 
 # # STRINGS ... Find first occurrence of uppercase
 # input_str_1 = "tandemTechniques"
-# input_str_2 = "RandemTechniques"
+# input_str_2 = "tandem Pechniques"
 # input_str_3 = "tandemtechniques"
 #
 # def find_upper_case(input_str):
@@ -188,22 +189,22 @@ Function to check string is palindrome or not
 #     return False
 # print(two_sum(A, target))
 # #****************         *******************       ****************
-# # TWO SUM ----------- with for loop
+# TWO SUM ----------- with for loop
 # def two_sum(nums, target):
 #     length = len(nums)
 #     for i in range(length):
 #         for j in range(i + 1, length):
 #             if nums[i] + nums[j] == target:
-#                 print(A[i], A[j]) # returns the numbers
+#                 print(nums[i], nums[j]) # returns the numbers
 #                 return [i, j]  # returns the numbers index
 # nums = [-2, 3, 5, 4, 8, 9]
 # target = 13
 # print(two_sum(nums, target))
 # =====================================================================================
 
-# # CONSONANTS AND VOWELS counting IN A GIVEN STRING
+# # CONSONANTS AND VOWELS COUNT IN A GIVEN STRING
 # input_str_1 = "abc de"
-# input_str_2 = "TandemtEcHniQEs"
+# # input_str_2 = "TandemtEcHniQEs"
 # vowels = "aeiou"
 # def consonants_count(input_str):
 #     count = 0
@@ -212,7 +213,7 @@ Function to check string is palindrome or not
 #             count += 1
 #     return count
 # print(consonants_count(input_str_1))
-# print(consonants_count(input_str_2))
+# # print(consonants_count(input_str_2))
 # =====================================================================================
 
 # # CODING CHALLENGE
@@ -400,10 +401,9 @@ of the input integer, then the integer is an ugly number.
 # ===========================================================================================
 
 # # SORTED ARRAY
-# # # Find the index of first and last positions of target in a given sorted array
+# # Find the index of first and last positions of target in a given sorted array
 # arr = [2, 4, 5, 5, 5, 5, 5, 7, 9, 9]
 # target = 5
-# # output: [2, 6]
 # def find_first_and_last(arr, target):
 #     for i in range(len(arr)):
 #         if arr[i] == target:
@@ -413,7 +413,16 @@ of the input integer, then the integer is an ugly number.
 #             return [start, i]
 #     return [-1, -1]
 # print(find_first_and_last(arr, target))
-#
+
+"""
+****************************************
+arr = [2, 4, 5, 5, 5, 5, 5, 7, 9, 9]
+for i in range(len(arr)): # prints the index of arr
+# for i in arr: # prints the contents of arr
+    print(i)
+****************************************
+"""
+
 # def find_start(arr, target):
 #     if arr[0] == target:
 #         return 0
@@ -427,6 +436,8 @@ of the input integer, then the integer is an ugly number.
 #         else:
 #             right = mid - 1
 #     return -1
+# arr = [2, 4, 5, 5, 5, 5, 5, 7, 9, 9]
+# target = 5
 # print(find_start(arr, target))
 #
 # def find_end(arr, target):
@@ -442,17 +453,18 @@ of the input integer, then the integer is an ugly number.
 #         else:
 #             left = mid + 1
 #     return -1
+# arr = [2, 4, 5, 5, 5, 5, 5, 7, 9, 9]
+# target = 5
 # print(find_end(arr, target))
 # =======================================================================================
-
-# PAIRS OF PARENTHESIS
-# """
-# Given an integer n, generate all the valid combinations of n pairs of parenthesis
-# input:
-# n = 3
-# output:
-# ["((()))", "((()())", "(())()", "()(())", "()()()"]
-# """
+"""
+PAIRS OF PARENTHESIS
+Given an integer n, generate all the valid combinations of n pairs of parenthesis
+input:
+n = 3
+output:
+["((()))", "((()())", "(())()", "()(())", "()()()"]
+"""
 # def is_valid(combination):
 #     stack = []
 #     for par in combination:
@@ -487,16 +499,15 @@ of the input integer, then the integer is an ugly number.
 # n = 3
 # print(generate(n))
 # =============================================================================
-
-# LARGEST RECTANGLE
-# """
-# Find the largest rectangle in a given histogram
-# """
+"""
+LARGEST RECTANGLE
+Find the largest rectangle in a given histogram
+"""
 # def largest_rectangle(heights):
 #     heights = [-1]+heights+[-1]
 #     max_area = 0
 #     stack = [(0, 1)]
-#     for i in range(1, len(heights)):
+#     for i in range(1, len(heights) - 1):
 #         start = i
 #         while stack[-1][1] > heights[i]:
 #             top_index, top_height = stack.pop()
@@ -504,11 +515,13 @@ of the input integer, then the integer is an ugly number.
 #             start = top_index
 #         stack.append((start, heights[i]))
 #     return max_area
+# heights = [2,5,3,1,3,7]
+# print(largest_rectangle(heights))
 # ============================================================================
-
-# # UNIQUE PATHS
 """
-Given two integers representing the size of a grid. using the size of the grid, the length, and breadth of the grid. 
+UNIQUE PATHS
+Given two integers representing the size of a grid. using the size of the grid, the length, 
+and breadth of the grid. 
 Find the number of unique paths from the top left corner of the grid to the bottom right corner.
 """
 # class Solution(object):
