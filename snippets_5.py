@@ -9,6 +9,8 @@ compare which elements in the variable are in the targets list
 Find values of even numbers in one list that is present in another list
 And also, just show True/False
 """
+
+
 # nums = [72, 40, 38, 25, 20, 23, 51, 49]
 # lst = [73, 72, 38, 25, 20, 90, 72, 22, 44]
 # def common_evens(nums):
@@ -186,3 +188,132 @@ Finding the sum of consecutive two elements in an array of numbers
 #     else:
 #         yield from range(value)
 # print(list(my_func(5)))
+# ===============================================
+"""
+By default all objects are true unless they are mentioned as false. 
+So the else condition is compiled and it gives a list of even numbers.
+"""
+# result = [x for x in range(10) if x % 2 != 0] if False else [x for x in range(10) if x % 2 == 0]
+# print(result)
+# ===================================================
+
+# snakes = ["Python", "Cobra", "Anaconda"]
+# snakes.extend("Boa")
+# print(snakes)
+# # ******************************
+
+# # Rounds off to the nearest even number
+# def round_off():
+#     num1 = round(9/2)
+#     num2 = round(7/2)
+#     return num1, num2
+#     # return num1 == num2
+# print(round_off())
+# **************************************
+
+# def process_data(data):
+#     unique_values = set()
+#     all_values = ()
+#
+#     for item in data:
+#         unique_values.add(item)
+#         all_values += (item,)
+#         return unique_values in all_values
+# data = [1, 2, 3, 2, 4, 5, 3, 6]
+# print(process_data(data))
+# **************************************
+
+# a = [1, 2, 3]
+# b = a.append(4)
+# print(a, b)
+# ****************************************
+#
+# a = [1, 2, 3]
+# b = a
+# b[1] = 4
+# print(a, b)
+# ******************************************
+
+# my_list = []
+# my_list += "Python"
+# print(my_list)
+#
+# my_list = []
+# my_list.append("Python")
+# print(my_list)
+# *******************************************
+
+# import pathlib
+# desktop = pathlib.Path("Downloads")
+# for item in desktop.rglob("*"):
+#     if item.is_file():
+#         print(item)
+
+# [item for item in desktop.rglob("*") if item.is_file()]
+
+# list(filter(lambda item: item.is_file(), desktop.rglob("*")))
+# *********************************************
+#
+# # Second Largest number in a list
+# def find_second_largest(lst):
+#     first, second = float('-inf'), float('-inf')
+#     for num in lst:
+#         if num > first:
+#             first, second = num, first
+#         elif first > num > second:
+#             second = num
+#     return second
+# my_nums = [44, 11, 83, 29, 25, 76, 88]
+# second_largest = find_second_largest(my_nums)
+# print(f"The second largest number is: {second_largest}")
+# # *****************************************************
+
+# lst = [1, 2, 3, 4]
+# for idx, nums in enumerate(lst):
+#     # del(nums)
+#     print(idx, nums) #(f"{idx}: {nums}")
+# print(lst)
+# ***********************************
+# for idx, num in enumerate(range(1,13)):
+#     print(f"{idx:5}: {num}")
+# ***********************************
+# for num in range(1,11):
+#     punishment = ("I'm sorry Ma'am!")
+#     print(f"{num:5}: {punishment}")
+# # ************************************************
+
+# # GREATEST COMMON DIVISOR
+# # Recursive function to return gcd of a and b
+# def gcd(a, b):
+#     # Edge cases
+#     if (a == 0):
+#         return b
+#     if (b == 0):
+#         return a
+#     # base case
+#     if (a == b):
+#         return a
+#     # a is greater
+#     if (a > b):
+#         return gcd(a-b, b)
+#     return gcd(a, b-a)
+# print(gcd(8, 12))
+# # 	print('GCD of', a, 'and', b, 'is', gcd(a, b))
+# # else:
+# # 	print('not found')
+# # import math
+# # print(math.gcd(15, 45))
+# # **************************************************
+# def func(x):
+#     x *= 2
+#     # return x
+# num = 15 and 6
+# print(num)
+# # print(func(num))
+# **************************************************
+
+# def modify_str():
+#     str1 = ("I Love Python")
+#     # str1 = str1.replace("Love", "Enjoy").split()
+#     return str1
+# print(modify_str())

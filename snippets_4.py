@@ -80,7 +80,7 @@ Given an unsorted array of integers, find the number of subarrays having a sum e
 # print(count_all_subarrys(arr, n))
 
 # ===============================================================================
-# # FIND THE DUPLICATEs AND UNIQUES
+# # FIND THE DUPLICATES AND UNIQUES
 # class Solution(object):
 #    def findDuplicate(self, nums):
 #        newlist = []  # empty list to hold unique elements from the list
@@ -305,15 +305,7 @@ Given an unsorted array of integers, find the number of subarrays having a sum e
 #       return res
 # ob1 = Solution()
 # print(ob1.exist([["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]],"SEE"))
-
 # ===============================================================================================
-# Turing Codes
-# =================================================================================================
-# Treehouse Codes
-# ==================================================================================================
-
-
-# =========================================
 
 # LINEAR SEARCH
 # # #Linear Search for target in data elements list

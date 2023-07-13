@@ -236,7 +236,7 @@
 # word = functools.reduce(lambda x, y,: x + y, letters)
 # print(word)
 # ======================================
-# ADDITION BY BRUTE FORCE & LIST COMPREHENSION
+# MULTIPLICATION BY BRUTE FORCE & LIST COMPREHENSION
 # mylist = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 # squares = []
 # for i in mylist:
@@ -340,13 +340,28 @@ import os
 # print(obj.num)
 # ==================================================
 
-# Adding total prices in a shopping cart
+# #SUM OF ALL NUMBERS IN A LIST
 # prices = [12, 25, 18, 41]
 # total = 0
 # for price in prices:
 #     total += price
 # print(f"Total cost: ${total}")
-# ===============================================================================
+# **********************************************
+# #SUM OF ALL NUMBERS TILL n
+# n = int(input("Please enter any positive number: "))
+# if n < 0:
+#     print("Error: Number must be positive")
+# else:
+#     sum = 0
+#     for i in range(n + 1):
+#         sum += i
+#
+#     # i = n
+#     # while i > 0:
+#     #     sum += i
+#     #     i -= 1
+# print(f"Sum of all positive numbers till {i} is {sum}")
+# ======================================================================
 
 # #Mapping digits to words
 # digits = None
