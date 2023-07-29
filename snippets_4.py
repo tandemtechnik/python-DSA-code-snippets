@@ -83,17 +83,17 @@ Given an unsorted array of integers, find the number of subarrays having a sum e
 # # FIND THE DUPLICATES AND UNIQUES
 # class Solution(object):
 #    def findDuplicate(self, nums):
-#        newlist = []  # empty list to hold unique elements from the list
+#        uniqlist = []  # empty list to hold unique elements from the list
 #        duplist = []  # empty list to hold the duplicate elements from the list
 #        for i in nums:
-#            if i not in newlist:
-#                newlist.append(i)
+#            if i not in uniqlist:
+#                uniqlist.append(i) # this method catches the first unique entries, and appends them to the list
 #            else:
 #                duplist.append(i)  # this method catches the first duplicate entries, and appends them to the list
 #
 #        # The next step is to print the duplicate entries, and the unique entries
 #        return "List of duplicates", duplist
-#        # return "Unique Item List", newlist # prints the final list of unique items
+#        # return "Unique Item List", uniqlist # prints the final list of unique items
 # nums = [5, 3, 5, 2, 1, 6, 6, 4] # the original list of integers with duplicates
 # ob1 = Solution()
 # print(ob1.findDuplicate(nums))

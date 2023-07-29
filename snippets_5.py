@@ -9,8 +9,6 @@ compare which elements in the variable are in the targets list
 Find values of even numbers in one list that is present in another list
 And also, just show True/False
 """
-
-
 # nums = [72, 40, 38, 25, 20, 23, 51, 49]
 # lst = [73, 72, 38, 25, 20, 90, 72, 22, 44]
 # def common_evens(nums):
@@ -117,10 +115,10 @@ Finding the sum of consecutive two elements in an array of numbers
 # lst = [1, 5, 7, 8, 4]
 # total = 0
 # for i, j in zip(lst, lst[1:]):
-#     add_ = i + j
+#     sum = i + j
 # #    print(i, j)
-# #   print(add_)
-#     total += add_
+# #   print(sum)
+#     total += sum
 # print(total)
 # ========================================================
 
@@ -178,7 +176,8 @@ Finding the sum of consecutive two elements in an array of numbers
 # ***************************************
 # langs = ["java", "C++", "Rust"]
 # # for lang in langs:
-# langs.append("Python")
+# # langs.append("Python")
+# langs.extend('Boa')
 # print(langs)
 # ****************************************
 
@@ -254,7 +253,7 @@ So the else condition is compiled and it gives a list of even numbers.
 # list(filter(lambda item: item.is_file(), desktop.rglob("*")))
 # *********************************************
 #
-# # Second Largest number in a list
+# Second Largest number in a list
 # def find_second_largest(lst):
 #     first, second = float('-inf'), float('-inf')
 #     for num in lst:
@@ -317,3 +316,42 @@ So the else condition is compiled and it gives a list of even numbers.
 #     # str1 = str1.replace("Love", "Enjoy").split()
 #     return str1
 # print(modify_str())
+# ***************************************************
+# # DICTIONARY SORTING
+# browsers = {'google chrome': 2013, 'fire fox': 2012, 'explorer': 2023, 'opera':2021}
+# sorted_dict = sorted(browsers)
+# print(sorted_dict)
+# sorted_by_keys = dict(sorted(browsers.items()))
+# print(sorted_by_keys)
+#
+# sorted_by_values = dict(sorted(browsers.items(),key=lambda x: x[1]))
+# print(sorted_by_values)
+# ***********************************************************************
+
+# TIMER DECORATOR FUNCTION
+# import time
+# def time_func(func):
+#     def wrapper(*args, **kwargs):
+#         start = time.time()
+#         func(*args, **kwargs)
+#         end = time.time()
+#         print(f'Elapsed time: {(end - start) * 1000:.3f}ms')
+#     return wrapper
+#
+# @time_func
+# def add(num1, num2):
+#     adder = []
+#     print(f"Add {num1} and {num2}")
+#     adder.append(num1 + num2)
+#     print(adder)
+#
+# @time_func
+# def multiply(num1, num2):
+#     mult = []
+#     print(f"Multiply {num1} and {num2}")
+#     mult.append(num1 * num2)
+#     print(mult)
+#
+# add(5, 2)
+# print()
+# multiply(9, 2)

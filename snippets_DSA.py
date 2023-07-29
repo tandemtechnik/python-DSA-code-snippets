@@ -418,11 +418,11 @@ of the input integer, then the integer is an ugly number.
 ****************************************
 arr = [2, 4, 5, 5, 5, 5, 5, 7, 9, 9]
 for i in range(len(arr)): # prints the index of arr
-# for i in arr: # prints the contents of arr
+# for i in arr: # prints the elements of arr
     print(i)
 ****************************************
 """
-
+# BINARY SEARCH
 # def find_start(arr, target):
 #     if arr[0] == target:
 #         return 0
@@ -579,3 +579,88 @@ store 0 instead. For example, if T = [73, 74, 75, 71, 69, 72, 76, 73], output wi
 # result = bs_Stock(S)
 # print(result)
 # ===================================================================================
+
+# # LOOP THROUGH ARRAYS
+# nums = [1, 2, 3]
+#
+# # Using Index
+# for i in range(len(nums)):
+#     print(i, nums[i])
+#
+# # Without Index
+# for n in nums:
+#     print(n)
+#
+# # With index and Value
+# for i, n in enumerate(nums):
+#     print(i, n)
+
+# SORTING BY SECOND LETTER
+# z = ('Kelvin', 'Niklaus', 'Jenny', 'Craig')
+# print(sorted(z))
+# print(sorted(z, key=lambda K: K[1]))
+
+# def get_squared_numbers(numbers):
+#     squared_numbers = []
+#     for n in numbers:
+#         squared_numbers.append(n*n)
+#     return squared_numbers
+#
+# numbers = [2, 5, 8, 9]
+# print(get_squared_numbers(numbers))
+# # ******************************************
+# DUPLICATES
+# numbers = [3, 6, 2, 4, 3, 6, 8, 9]
+#
+# for i in range(len(numbers)):
+#     for j in range(i+1, len(numbers)):
+#         # print(numbers[i], numbers[j])
+#         if numbers[i] == numbers[j]:
+#             print(f"{numbers[i]} ia a duplicate")
+#             # break
+# *****************************************
+#
+# heros = ['spider man', 'thor', 'hulk', 'iron man', 'captain america']
+# heros[1:4] = ['doctor strange']
+# print(heros)
+# # ***************************************
+# ODD NUMBERS FROM N
+# max_num = int(input("Pls enter any number: "))
+# odd_nums = []
+# for num in range(1, max_num):
+#     # print(num)
+#     if num % 2 == 1:
+#         odd_nums.append(num)
+# print(odd_nums)
+# # *******************************************
+# FIND AVERAGE OF NUMBERS
+# Python code to get average of list
+# def Average(lst):
+#     sum_of_list = 0
+#     # for i in range(len(lst)):
+#     for i in lst:
+#         # sum_of_list += lst[i]
+#         sum_of_list += i
+#         average = sum_of_list/len(lst)
+#     return average
+#
+# # Driver Code
+# lst = [15, 9, 55, 41, 35, 20, 62, 49]
+# average = Average(lst)
+# print("Average of the list =", round(average, 2))
+# ***********************
+# def calculate_average(values):
+#     if type(values) is not str:
+#         if "__iter__" in dir(values):
+#             sum_expr = "+".join(str(v) for v in values)
+#             avg_expr = f"({sum}) / {len(values)}"
+#             average = eval(avg_expr)
+#             return average
+#         else:
+#             return None
+#     return values
+# items = "[12, 34, 56, 78]"
+# # items = [12, 34, 56, 78]
+# result = calculate_average(items)
+# print(result)
+# ********************************************************

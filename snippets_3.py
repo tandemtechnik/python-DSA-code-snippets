@@ -168,15 +168,8 @@
 # dice = Dice()
 # print(dice.roll_dice())
 # ===========================================================================
-# GET INPUT FROM USER
-# # Get a list as input from user
-# lst = ""
-# n = int(input("Enter no of elements: "))
-# for i in range(0, n):
-#     elem = input("Enter elements: ")
-#     lst += elem
-# print(lst, end=" ")
-# ===============================
+# # GET INPUT FROM USER
+# # # Get a list as input from user
 # lst = []
 # # ele = ""
 # # number of elements as input
@@ -245,7 +238,7 @@
 
 # squares = [i*2 for i in mylist]
 # print(squares)
-
+# *******************************************************
 # my_list = [3, 1, 6, 2]
 # my_list = sorted(my_list)
 # print(my_list)
@@ -314,7 +307,7 @@ import os
 # with open('gfg.txt', 'a') as file:
 #     file.write("\n" + text)
 #     file.write("\n" + text1)
-
+# *************************************************************
 # number = 10
 # lots_of_numbers = [number for x in range(5, 100, 2) if (number := x)]
 # print(number)
@@ -621,7 +614,7 @@ import os
 # lst1 = [1000, 50, 66, 101, 333, 9999, 19, 300, 200, 250]
 # lst2 = sorted(lst1, key=lambda x: x % 5, reverse=True)
 # print(lst2)
-
+# *******************************************************************
 # # Given a dictionary is consisted of vehicles and their weights in kilograms.
 # # Contruct a list of the names of vehicles with weight below 5000 kilograms.
 # # In the same list comprehension make the key names all upper case.
