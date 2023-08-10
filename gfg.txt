@@ -4,4 +4,4 @@ This is another awesome testing text This is another way to append to a file
 This is some awesome testing text
 This is another awesome testing text 
 This is some awesome testing text
-This is another awesome testing text 
+This is another awesome testing text free trial test

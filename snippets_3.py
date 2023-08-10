@@ -1,9 +1,9 @@
-# OPEN A FILE TO READ AND CLOSE IT
+# # OPEN A FILE TO READ AND CLOSE IT
 # with open('gfg.txt', 'r') as f:
 #     file = f.read()
 #     print(file)
-# =====================================
-# OPEN A FILE TO APPEND CONTENT AND CLOSE IT
+# # =====================================
+# # OPEN A FILE TO APPEND CONTENT AND CLOSE IT
 # temp = None
 # while True:
 #     temp = input("Please enter your information!! ")
@@ -32,18 +32,19 @@
 # print("searched url: ", find(URL))
 # ================================================================================
 
-# LOGICAL OPERATORS
+# # LOGICAL OPERATORS
 # temp = int(input("What's the temperature outside today?:"))
 # if temp > 10 and temp < 30:
 #     print("Go outside and catch cruise")
 # elif temp < 0 or temp > 30:
 #     print("Better stay indoors, it's ugly outside")
 # ==================================
-# temp = 32
+# temp = input("Enter temp: ")
 # if temp <= 0 or temp >= 30:
-#     print("Temperature is bad")
+#         print("Temperature is bad")
 # else:
 #     print("Temperature is good")
+
 # ==================================================================================
 
 # WHILE LOOP F0R PERSISTENCE-INFINITE LOOPS
@@ -87,8 +88,8 @@
 # sym = '*'
 # for i in range(rows):
 #     for j in range(cols):
-#         print(i, j, end=' ')
-#     #     print(sym, end='')
+#         # print(i, j, end=' ')
+#         print(sym, end='')
 #     print()
 # =================================
 # num_pad = ((1, 2, 3,),
@@ -115,7 +116,7 @@
 
 # FUNCTIONS: A block of code which is executed only when it is invoked. Helps maintain the DRY principle
 # def hello(name):
-#     # print("Hi "+name)
+#     print("Hi "+name)
 #     print(f"Hello {name},")
 #     print("have a wonderful day!")
 # hello("Tboy")
@@ -161,12 +162,16 @@
 # ============================================
 # import random
 # class Dice:
-#     def roll_dice(self):
-#         first = random.randint(1, 6)
-#         second = random.randint(1, 6)
+#     def roll_dice(self, first, second):
+#         self.first = first
+#         self.second = second
+#         # first = random.randint(1, 6)
+#         # second = random.randint(1, 6)
 #         return (first, second)
+# first = random.randint(1, 6)
+# second = random.randint(1, 6)
 # dice = Dice()
-# print(dice.roll_dice())
+# print(dice.roll_dice(first, second))
 # ===========================================================================
 # # GET INPUT FROM USER
 # # # Get a list as input from user
@@ -224,6 +229,8 @@
 # factorial = [5,4,3,2,1]
 # result = functools.reduce(lambda x, y,:x * y, factorial)
 # print(result)
+
+# print(result)
 # ==================
 # letters = ["H", "E", "L", "L", "O"]
 # word = functools.reduce(lambda x, y,: x + y, letters)
@@ -235,7 +242,7 @@
 # for i in mylist:
 #     squares.append(i*2)
 # print(squares)
-
+# ***************************************
 # squares = [i*2 for i in mylist]
 # print(squares)
 # *******************************************************
@@ -322,16 +329,25 @@ import os
 
 # CLASSES
 # class MyClass:
-#     def __init__(self, num):
+#     def __init__(self, num): # class constructor
 #         self.num = num
 #
 #     def instance_method(self):
 #         self.num = 40
 #         return f"{self.num}"
-# obj = MyClass(5)
+# obj = MyClass(4)
 # # obj.instance_method()
 # print(obj.num)
+# # print(obj.instance_method())
 # ==================================================
+
+# # PRODUCT OF ALL NUMBERS IN A LIST
+# mylist = [1, 2, 3, 4]
+# product = 1
+# for i in range(len(mylist)):
+#     product = product * mylist[i]
+# print(product)
+# *****************************
 
 # #SUM OF ALL NUMBERS IN A LIST
 # prices = [12, 25, 18, 41]
@@ -376,30 +392,8 @@ import os
 #     for nums in digits:
 #         output += digits_mapping.get(nums, "!") + " "
 #     print(output)
-# =========================================================================
-
-# # Maximum Number with function
-# numbers = [2, 1, 5, 0, 6, 34]
-# def find_max(numbers):
-#     maximum = numbers[0]
-#     for number in numbers:
-#         if number > maximum:
-#             maximum = number
-#     return maximum
-# result = find_max(numbers)
-# print(result)
-#======================================================
-# # Find minimum number function
-# numbers = [12, 11, 5, 87, 6, 34]
-# def find_min(numbers):
-#     minimum = numbers[0]
-#     for number in numbers:
-#         if minimum > number:
-#             minimum = number
-#     return minimum
-# result = find_min(numbers)
-# print(result)
 # ==================================================================
+
 # # Shallow copy:
 # original_list = [1, 2, 3, [4, 5]]
 # shallow_copy = original_list.copy()
@@ -420,21 +414,21 @@ import os
 # for i in range(3):
 #     for j in range(3):
 #         print(i*j, end=' ')
-#     print()
+    # print()
 # # 000012024
 #============================================================================
 
 # # Count number of words that contain letter "s"
-# my_str = "Oranges and lemons, Say the bells of St. Clement's. " \
+my_str = "Oranges and lemons, Say the bells of St. Clement's. " \
 #         "You owe me three farthings, Say the bells of St. Martin's"
-# def count_l(str):
-#     c = 0
-#     for i in str.split():
-#         if "s" in i.lower():
-#             c = c + 1
+# def count_l(my_str):
+#     count = 0
+#     for c in my_str.split():
+#         if "s" in c.lower():
+#             count += 1
 #         else:
 #             pass
-#     return c
+#     return count
 # print(count_l(my_str))
 #=============================================================================================
 
@@ -476,6 +470,8 @@ import os
 # # Using a combination of .split() and .lstrip() methods, get the word "Derivatives".
 # str="......Macroeconomics,...........Derivatives"
 # lst = str.split(",")
+# # for i in range(len(lst)):
+# #     ans_1 = lst[i].lstrip(".")
 # ans_1 = lst[1].lstrip(".")
 # print(ans_1)
 
@@ -487,7 +483,7 @@ import os
 # NESTED Data, ACCESSING DICTIONARY VALUES
 # What color is violet
 # nested_lst = [{"orange": "orange"}, {"rose": "red"}, {"violet": "blue"}]
-# ans_1 = nested_lst[2]["violet"]
+# ans_1 = nested_lst[2]['violet']
 # print(ans_1)
 
 # # Print the value of the roads key from the nested dictionary
@@ -506,10 +502,16 @@ import os
 # counter = 0
 # total = 0
 # while counter <= 100:
-#     total = total+counter
-#     counter = counter+1
+#     total += counter
+#     counter += 1
 # print(total)
-
+# #***************************************
+# # ABOVE SOLUTION WITH FOR LOOP
+# total = 0
+# for counter in range(100+1):
+#     total += counter
+# print(total)
+# # ************************************************
 # # Using a while loop, len function, if statement and str() function;
 # # iterate through the given list and if there is a 100,
 # # assign a notification message to the variable my_message with the index of 100.
@@ -518,9 +520,9 @@ import os
 # message = ""
 # i = 0
 # while i < len(lst):
-#     if lst[i] == 12:
+#     if lst[i] == 100:
 #         my_message = "There is a " + str(lst[i]) + " at index no: " + str(i)
-#     i = i+1
+#     i = i+1 # code required to increment while loop
 # print(my_message)
 # ======================================================
 
@@ -533,18 +535,19 @@ import os
 #     while i < len(list):
 #         if list[i] != "":
 #             new_list.append(list[i])
-#         # Stop adding when "" is encountered
+#              #Stop adding when "" is encountered
 #         else:
-#             pass # use break to stop at the occurrence of character
+#             pass
+#             # use break to stop at the occurrence of character
 #         i = i+1
 #     return new_list
 # print(name_adder(lst1))
 
-# # CONTINUE
+# # CONTINUE WITH FOR LOOP
 # weather=["snow", "rain", "sun", "clouds"]
 # for i in weather:
 #     if i == "sun":
-#         continue # use break to end the iteration
+#         continue # continue will continue, use break to end the iteration
 #     print(i)
 # =========================================================================================
 
@@ -602,7 +605,7 @@ import os
 # # FILTER all the positive integers
 # str1="Winter Olympics in 2022 will take place in Beijing China"
 # lst = list(filter(lambda x: True if x in "0123456789" else False, str1))
-# print(lst)
+# print(''.join(lst))
 
 # # Using lambda and sorted() function, sort the list based on last characters of the items from z to a.
 # lakes1=["Malawi", "Medicine", "Tahoe", "Moraine", "Upper Arrow", "Plitvice", "Edith", "Emerald"]
@@ -675,23 +678,26 @@ import os
 # prices = []
 # total = 0
 # while True:
-#     food = input("Enter a food to buy (q to quit): ")
+#     food = input("Enter food to buy (q to quit): ")
 #     if food.lower() == "q":
 #         break
 #     else:
-#         price = int(input(f"Enter price> {food}: $"))
+#         price = float(input(f"Enter price> {food}: $"))
 #         foods.append(food)
 #         prices.append(price)
 # print()
 # print("----Your Shopping Card-----")
-# for food in foods:
-#     print(food.capitalize())
+# for i in range(len(foods)):
+#     food = foods[i]
+#     price = prices[i]
+#     print(f"{food.title():15}: {price}")
+# print("---------------------")
 # for price in prices:
 #     total += price
-# print(f"Your total is : ${total: .2f}")
+# print(f"Your total is: ${total:.2f}")
 # ==========================================
 
-# CONCESSION STAND PROGRAM
+# # CONCESSION STAND PROGRAM
 # menu = {"pizza": 3.00,
 #                "nachos": 4.50,
 #                "popcorn": 6.00,

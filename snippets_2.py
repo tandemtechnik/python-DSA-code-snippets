@@ -51,7 +51,7 @@ Python program to create acronyms
 #         words.extend(line.split())
 # from collections import Counter
 # counts = Counter(words)
-# top_n = counts.most_common(3)
+# top_n = counts.most_common(5)
 # print(top_n)
 # ===============================================================================================
 
@@ -94,14 +94,15 @@ Python program to create acronyms
 #         result.append(func(i))
 #     return result
 #
-# squares = my_map(square, [1, 2, 3, 4, 5])
-# cubes = my_map(cube, [1, 2, 3, 4, 5])
+# my_list = [1, 2, 3, 4, 5]
+# squares = my_map(square, my_list)
+# cubes = my_map(cube, my_list)
 #
 # print(squares)
 # print(cubes)
 # =============================================================================
 
-# # CLOSURES
+# CLOSURES
 # def logger(msg):
 #
 #     def log_message():
@@ -114,6 +115,29 @@ Python program to create acronyms
 MAXIMUM VALUE
 Maximum value in a python list or infact in any iterable without using max() function
 """
+# # Maximum Number with function
+# numbers = [2, 1, 5, 0, 6, 34]
+# def find_max(numbers):
+#     maximum = numbers[0]
+#     for number in numbers:
+#         if number > maximum:
+#             maximum = number
+#     return maximum
+# result = find_max(numbers)
+# print(result)
+#======================================================
+# # Find minimum number function
+# numbers = [12, 11, 5, 87, 6, 34]
+# def find_min(numbers):
+#     minimum = numbers[0]
+#     for number in numbers:
+#         if minimum > number:
+#             minimum = number
+#     return minimum
+# result = find_min(numbers)
+# print(result)
+# *******************************************************
+
 # my_list = [2,3,1,4,6,7,99,999,88]
 # # max_ = max(my_list)
 # # print(max_)
@@ -139,14 +163,14 @@ Maximum value in a python list or infact in any iterable without using max() fun
 #             curr_min = num
 #             return curr_min
 # print(minimum([2,3,1,4,6,7,99,999,88]))
-# **********************************************
+# ***************************************************************************************
 # my_list = [2,3,1,4,6,7,99,999,88]
 # max_num = my_list[0]
 # for num in my_list:
 #     if num > max_num:
 #         max_num = num
 # print(max_num)
-# print(a.index(max_num))
+# print(my_list.index(max_num))
 # **********************************************
 # my_list = [2,3,1,4,6,7,99,999,88]
 # min_num = my_list[0]
@@ -154,7 +178,7 @@ Maximum value in a python list or infact in any iterable without using max() fun
 #     if min_num > num:
 #         min_num = num
 # print(min_num)
-# ==================================================
+# =======================================================================================
 """
 FIND THE INDEX OF MAXIMUM VALUE IN A LIST
 Also if you want to find the index of the resulting max,
@@ -429,9 +453,9 @@ Create a dictionary from 2 lists
 # =========================================================================
 
 # STRING SLICING
-# # Reversed String
+# Reversed String
 # s = "Tandem Techniques"
-# reversed_string = s[::-1]
+# reversed_string = s[15:5:-1]
 # print(reversed_string)
 # ==============================================================================
 
@@ -496,14 +520,12 @@ Create a dictionary from 2 lists
 # FUNCTIONS
 # # REPLACE FUNCTION
 # s = "awesome"
-# print(s.replace('e', 'r', 1))
-# # Only one instance of e is replaced in this case
+# print(s.replace('e', 'r', 1)) # Only one instance of e is replaced in this case
 # *********************************
 # def multiply(a, b):
 #     result = a * b
 #     return result
-# result = multiply(2, 7)
-# print(result)
+# print(multiply(2, 7))
 # result = [a*b for a, b in (2, 7)]
 # result = (lambda a, b: a * b)(2, 7)
 # print(result)
@@ -543,18 +565,18 @@ Create a dictionary from 2 lists
 # print(names)
 # =========================================================================
 
-# CODING CHALLENGE
+# # CODING CHALLENGE
 # i = j = [3]
 # i += j
 # print(i, j)
-# [3,3] [3,3]
-# j is an instance of i both pointing to same address
+# # [3,3] [3,3]
+# # j is an instance of i both pointing to same address
 # *****************************************************
 # i = j = "Python"
 # i += "rocks!"
 # print(i, j)
-# Pythonrocks!, Python
-# j is an instance of i both pointing to same address
+# # Pythonrocks!, Python
+# # j is an instance of i both pointing to same address
 # ===========================================================================
 
 # # Fizz Buzz
@@ -577,19 +599,6 @@ Create a dictionary from 2 lists
 # print(results)
 # ======================================================================
 
-# CONSECUTIVE ONES OCCURENCES
-# def count_consecutive_ones(lst):
-#     count = 0
-#     total = 0
-#     for num in lst:
-#         if num == 1:
-#             count += 1
-#             if count == 2:
-#                 total += 1
-#         else:
-#             count = 0
-#     return total
-# elements = input("Enter list elements (separated by space): ").split()
-# my_list = [int(elem) for elem in elements]
-# occurrences = count_consecutive_ones(my_list)
-# print("Occurrences of two consecutive ones:", occurrences)
+# CONSECUTIVE ONES OCCURRENCES
+
+

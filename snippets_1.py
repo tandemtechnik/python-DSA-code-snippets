@@ -1,12 +1,12 @@
 # # ==========================================================================
-# REPEATED SUBSTRING PATTERN using Python
+# # REPEATED SUBSTRING PATTERN using Python
 # def repeatedSubstringPattern(s):
-        # string = (s + s)[1:-1]
-        # return string.find(s) != -1
+#         string = (s + s)[1:-1] # a[1:-1] from the first to end item, reversed
+#         return string.find(s) != -1 # find any existing, matching substring in the whole string
 # print(repeatedSubstringPattern("abcabcabcabc"))
 # ========================================================================
 
-# COUNTING BITS using Python
+# # COUNTING BITS using Python
 # def countBits(num):
 #     counter = [0]
 #     if num >= 1:
@@ -32,7 +32,7 @@
 #         elif mid * mid > num:
 #             right = mid
 #     return False
-# print(isPerfectSquare(25))
+# print(isPerfectSquare(49))
 # ======================================================================
 
 # FIRST UNIQUE CHARACTER ----- in a String
@@ -41,13 +41,13 @@
 #     count = Counter(s)
 #     for i, j in enumerate(s):
 #         if count[j] == 1:
-#             return i # f"First unique character is '{j}', at position index of '{i}'"
+#             return f"First unique character is '{j}', at position index of '{i}'"
 #     else:
 #         return -1
 # print(firstUniqueChar("ammannkkarwal"))
 # ========================================================================
 """"
-# HAMMING DISTANCE BETWEEN TWO CHARACTERS ------ is a measure of the difference between two strings of equal length.
+# HAMMING DISTANCE BETWEEN TWO CHARACTERS -- is a measure of the difference between two strings of equal length.
 # Given two integers, calculate the number of positions where the corresponding bits are different.
 # For two integers: 1 and 4. The binary representation of 1 is 0001, and 4 is 0100.
 # There are two positions where the corresponding bits of the integers are different. So the output is 2.
@@ -68,14 +68,14 @@
 # Find the maximum number of consecutive ones in a binary array.
 # def findMaxConsecutiveOnes(nums):
 #     max_count = 0
-#     count = 0
+#     num_count = 0
 #     for i in nums:
 #         if i == 1:
-#             count += 1
+#             num_count += 1
 #         else:
-#             max_count = max(max_count, count)
-#             count = 0
-#     return max(max_count, count)
+#             max_count = max(max_count, num_count)
+#             num_count = 0
+#     return max(max_count, num_count)
 #
 # nums = [1,1,0,1,1,1,1]
 # print(findMaxConsecutiveOnes(nums))
@@ -91,7 +91,7 @@ differ by the smallest possible number.
 #     while area % w != 0:
 #         w -= 1
 #     return [area // w, w]
-# print(constructRectangle(45))
+# print(constructRectangle(30))
 # =============================================================================================
 """
 LICENSE TAGS FORMATTING
@@ -110,14 +110,8 @@ each group contains the same length of characters except the first group.
 # ======================================================================================
 """
 NUMBER OF SEGMENTS ... in a String
-The output of the string in this example is 6 because there are six characters segments in the string.string
-"""
-# def countSegments(s):
-#     count = len(s.split())
-#     return count
-# print(countSegments("Hey, my instagram username is amankharwal.official"))
-# ***********    ************   ***********
-"""
+The output of the string in this example is 6 because there are six characters segments in the string.
+
 The re.sub(” +”, ” “, s) uses the regular expression tool to remove extra white spaces in the string. 
 Then we just need to use split to group into segments. The edge case is when the string is empty, 
 which should return 0 segments instead.
@@ -135,6 +129,12 @@ which should return 0 segments instead.
 # sol = Solution()
 # result = sol.countSegments(s)
 # print(result)
+"""
+def countSegments(s):
+    count = len(s.split())
+    return count
+print(countSegments("Hey, my instagram username is amankharwal.official"))
+"""
 # =======================================================================================
 """
 THIRD MAXIMUM NUMBER
@@ -173,7 +173,7 @@ Find the third maximum number in an array, given an array of integers.
 # print(result)
 # ==========================
 # class Solution(object):
-#     def fizzBuzz(n):
+#     def fizzBuzz(self, n: int) -> list[str]:
 #         output = []
 #         for i in range(1, n + 1):
 #             if (i % 3) == 0 and (i % 5) == 0:
@@ -185,16 +185,15 @@ Find the third maximum number in an array, given an array of integers.
 #             else:
 #                 output.append(str(i))
 #         return output
-#     n = 16
-# # sol = Solution()
-# # result = sol.fizzBuzz(n)
-#     result = fizzBuzz(n)
-#     print(result)
+# n = 16
+# sol = Solution()
+# result = sol.fizzBuzz(n)
+# print(result)
 # =============================================================================================
 
 # # PRINTING STRINGS WITH FOR LOOP
 # numbers = [2, 2, 2, 2, 10]
-# # numbers = [5, 2, 5, 2, 2]
+# numbers = [5, 2, 5, 2, 2]
 # for str_ in numbers:
 #     # print('X' * str_)
 #     output = ''
@@ -213,17 +212,17 @@ Given an integer. Return True if the integer is a power of two; otherwise, retur
 #         n = n // 2
 #     else:
 #         return True
-# print(isPowerOfTwo(16))
+# print(isPowerOfTwo(60))
 # ***************************
-# # Power of Three
+# Power of Three
 # def isPowerOfThree(n):
 #     while (n != 1):
-#         if (n % 3 != 0):
+#         if (n % 5 != 0):
 #             return False
-#         n = n // 3
+#         n = n // 5
 #     else:
 #         return True
-# print(isPowerOfThree(81))
+# print(isPowerOfThree(120))
 # =================================================================================================
 
 # # MOVE ZEROS FORWARD
@@ -251,7 +250,7 @@ and your output should return true
 #         return n == 1
 #     else:
 #         return 0
-# print(isUgly(8))
+# print(isUgly(26))
 # ==============================================================================================
 """
 ADD DIGITS OF A WHOLE NUMBERS
@@ -262,53 +261,10 @@ till you get a single-digit value as the sum.
 #     while num > 9:
 #         num = (num % 10) + (num // 10)
 #     return num
-# print(addDigits(27))
+# print(addDigits(1232))
 # ==============================================================================================
-"""
-# DUPLICATES
-Check Duplicate Values using Python..... compare with code for duplicates/uniques
-Given an array of integers, you need to check if any value appears more than once.
-"""
-# def find_duplicates(x):
-#     length = len(x)
-#     duplicates = []
-#     for i in range(length):
-#         n = i + 1
-#         for a in range(n, length):
-#             if x[i] == x[a] and x[i] not in duplicates:
-#                 duplicates.append(x[i])
-#     return duplicates
-# names = ["Aman", "Akanksha", "Divyansha", "Devyansh", "Aman", "Diksha", "Akanksha"]
-# # names = [1,2,3,1,3]
-# print(find_duplicates(names))
-# **************************************
-# def containsDuplicate(nums):
-#     for i in range(len(nums)):
-#         for j in range(i + 1, len(nums)):
-#             if nums[i] == nums[j]:
-#                 return True
-#     else:
-#         return False
-# # nums = [1,2,3,1]
-# nums = ["Aman", "Akanksha", "Divyansha", "Devyansh",
-#          "Aman", "Diksha", "Akanksha"]
-# print(containsDuplicate(nums))
-# ====================================================================================
-"""
-PALINDROME VALIDATION
-Palindrome words are words that are read the same backward as forward.
-For example, mom, dad, and madam are palindrome words.
-"""
-# def ispalindrome(x):
-#     x = x.lower()
-#     text = ""
-#     for i in range(len(x)):
-#         if x[i].isalnum():
-#             text = text + x[i]
-#     return text == text[::-1]
-# print(ispalindrome("A man, a plan, a canal: Panama"))
-# ================================================================================
 
+# PATHS
 # def paths(m, n):
 #     row = [1] * n
 #     print(row)
@@ -328,13 +284,13 @@ Given an array nums of size n, return the majority element.
 # def majorityElement(nums):
 #     count = 0
 #     major_element = 0
-#     for i in nums:
+#     for num in nums:
 #         if count == 0:
-#             major_element = i
-#         if major_element == i:
-#             count += 1
+#             major_element = num
+#         if major_element == num:
+#             count += num
 #         else:
-#             count -= 1
+#             count -= num
 #     return major_element
 # nums = [2,2,1,1,1,2,2]
 # print(majorityElement(nums))
@@ -372,18 +328,18 @@ SINGLE NUMBER PROBLEM
 Given an array of integers where every item appears twice, find item that appears only once
 """
 # def singleNumber(nums):
-#     count = 0
-#     for i in nums:
-#         count = count ^ i
-#     return count
+#     single = 0
+#     for num in nums:
+#         single = single ^ num
+#     return single
 # nums = [4, 1, 2, 1, 2, 4, 7]
 # print(singleNumber(nums))
 # ======================================================================================
 """
 MAXIMUM PROFIT FINDER (Best Time to Buy and Sell Stock using Python)
 Finding the best time to buy and sell a stock is also known as a maximum profit finder.
-In the example below, the stock price is 7 on the first day. We bought the stock on day 2 at a price of 1 and sold
-it on day 5 at a price of 6. Hence, maximum profit = 5 (6 – 1).
+In the example below, the stock price is 7 on the first day. We bought the stock on day 2 at a price of 1 
+and sold it on day 5 at a price of 6. Hence, maximum profit = 5 (6 – 1).
 """
 # def maxProfit(prices):
 #     buy = 0
@@ -432,11 +388,10 @@ find the missing number in the input array.
 """
 # def findMissingNumbers(n):
 #     numbers = set(n)
-#     # length = len(n)
 #     output = []
-#     for i in range(1, n[-1]):
-#         if i not in numbers:
-#             output.append(i)
+#     for num in range(1, n[-1]):
+#         if num not in numbers:
+#             output.append(num)
 #     return output
 # listOfNumbers = [1, 3, 5, 6, 7, 8, 9, 10, 11, 13, 16]
 # print(findMissingNumbers(listOfNumbers))
@@ -451,8 +406,7 @@ In this situation, the output should be 0,1 because the sum of 1 at index 0 and 
 #     for i in range(length):
 #         for j in range(i + 1, length):
 #             if nums[i] + nums[j] == target:
-#                 return [i, j]
-#                 # return [nums[i], nums[j]]
+#                 return f"Indexes: {[i, j]} \nElements: {[nums[i], nums[j]]}"
 # nums = [3, 4, 1, 7]
 # target = 11
 # print(twosum(nums, target))
@@ -466,7 +420,7 @@ In this situation, the output should be 0,1 because the sum of 1 at index 0 and 
 #                     if nums[i] + nums[j] + nums[x] + nums[y] == target:
 #                         return [i, j, x, y]
 # nums = [3, 4, 1, 7, 4, 9, 2]
-# target = 10
+# target = 14
 # print(foursum(nums, target))
 # ===========================================================================================
 """
@@ -515,15 +469,19 @@ To remove duplicates from a sorted array, you need to create a new array by only
 values from the input array.
 """
 # def removeDuplicate(items):
-#     list1 = []
-#     for i in items:
-#         if i not in list1:
-#             list1.append(i)
-#     return list1
-# nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
-# print(removeDuplicate(nums))
-# # s_nums = list(set(nums))
-# # print(s_nums)
+#     uniques = []
+#     # duplicates = []
+#     for num in items:
+#         if num not in uniques:
+#             uniques.append(num)
+#             # return uniques
+#         # else:
+#             # duplicates.append(num)
+#             # return duplicates
+#     # return f"uniques: {uniques}\nDuplicates:  {duplicates}"
+#     return f"Removed the duplicates leaving only uniques: {uniques}"
+# my_list = [2, 4, 44, 5, 2, 7, 5, 40]
+# print(removeDuplicate(my_list))
 # ==========================================================================================
 """
 MERGE TWO SORTED LISTS
@@ -551,7 +509,6 @@ To solve the Longest Common Prefix problem, you need to find the most common pre
 of an array. For example, given an array of strings [“flower”, “flow”, “flight”], in this array,
 the most common prefix among the first two items is “flo”
 """
-# strs = ["abcabcbb",]
 # strs = ["flower", "flow", "flog"]
 # def longestCommonPrefix(strs):
 #     l = len(strs[0])
@@ -580,7 +537,7 @@ the elements of the same indices.
 #         outputLists[index].append(inputLists[j][index])
 #     index += 1
 # a, b, c = outputLists[0], outputLists[1], outputLists[2]
-# print(f"{a} \n {b} \n {c}")
+# print(f"{a} \n{b} \n{c}")
 
 # =================================================================================
 

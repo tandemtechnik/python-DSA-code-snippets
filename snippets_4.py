@@ -1,15 +1,15 @@
 # https://www.turing.com/interview-questions/python#advanced
 # def increment_by(n, increment=1):
 #     return n + increment
-# result = increment_by(5, 4)
+# result = increment_by(5, 39)
 # # result = increment_by(4)
 # print(result)
-# The functions work like this:
+# # The functions work like this:
 # increment_by(5, 2)
 # increment_by(4)
 # ========================================================================
-
-#Declaring lists
+#
+# # Declaring lists
 # list1=['a',4,'%','d','e']
 # list2=[3,'f',6,'d','e',3]
 # list3=[12,3,12,15,14,15,17]
@@ -31,8 +31,8 @@
 # print(d)
 # ***********************************************************
 # def func(arr1, arr2):
-#     return [x for x in arr1 if x in arr2]
-# arr1 = [1, 2, 3]
+#     return [x for x in arr1 if x not in arr2]
+# arr1 = [1, 2, 3, 8]
 # arr2 = [4, 3, 2, 1]
 # print(func(arr1, arr2))
 # # *************************************************************
@@ -42,12 +42,12 @@
 # def commonelems(x,y):
 #    common=0
 #    for value in x:
-#       if value in y:
-#          common=1
-#    if(not common):
-#       return ("The lists have no common elements")
-#    else:
-#     return ("The lists have common elements")
+#        if value in y:
+#            common=1
+#            if(not common):
+#                return ("The lists have no common elements")
+#        else:
+#            return ("The lists have common elements")
 # print(commonelems(x,y))
 
 # #Checking two lists for common elements
@@ -63,7 +63,8 @@
 # =========================================================================================
 """
 SUBARRAY SUM EQUAL K:
-Given an unsorted array of integers, find the number of subarrays having a sum exactly equal to a given number k.
+Given an unsorted array of integers, find the number of subarrays having a sum exactly equal to a
+given number k.
 """
 # def count_all_subarrys(arr, n):
 #     res = 0
@@ -74,27 +75,30 @@ Given an unsorted array of integers, find the number of subarrays having a sum e
 #             if summ == k:
 #                 res += 1
 #     return res
-# arr = [10, 2, -2, -20, 10]
+# # arr = [10, 2, -2, -20, 10]
+# arr = [1, 10, 3, 9, 4, 8]
 # n = len(arr)
-# k = -10
+# # k = -10
+# k = 12
 # print(count_all_subarrys(arr, n))
 
 # ===============================================================================
 # # FIND THE DUPLICATES AND UNIQUES
 # class Solution(object):
-#    def findDuplicate(self, nums):
-#        uniqlist = []  # empty list to hold unique elements from the list
-#        duplist = []  # empty list to hold the duplicate elements from the list
-#        for i in nums:
-#            if i not in uniqlist:
-#                uniqlist.append(i) # this method catches the first unique entries, and appends them to the list
-#            else:
-#                duplist.append(i)  # this method catches the first duplicate entries, and appends them to the list
+#     def findDuplicate(self, nums):
+#         uniqlist = []  # empty list to hold unique elements from the list
+#         duplist = []  # empty list to hold the duplicate elements from the list
+#         for i in nums:
+#             if i not in uniqlist:
+#                 uniqlist.append(i)  # this method catches the first unique entries
+#             else:
+#                 duplist.append(i)  # this method catches the first duplicate entries
 #
-#        # The next step is to print the duplicate entries, and the unique entries
-#        return "List of duplicates", duplist
-#        # return "Unique Item List", uniqlist # prints the final list of unique items
-# nums = [5, 3, 5, 2, 1, 6, 6, 4] # the original list of integers with duplicates
+#         return f"List of duplicates: {duplist}\nList of uniques:{uniqlist}"
+#
+#
+# nums = [5, 3, 5, 2, 1, 6, 6, 4]  # the original list of integers with duplicates
+# # nums = ["Aman", "Akanksha", "Divyansha", "Devyansh", "Aman", "Diksha", "Akanksha"]
 # ob1 = Solution()
 # print(ob1.findDuplicate(nums))
 # # ====================================================
@@ -106,21 +110,31 @@ Given an unsorted array of integers, find the number of subarrays having a sum e
 # for num in my_list:
 #     if num not in uniques:
 #         uniques.append(num)
-# # print(uniques)
 #     else:
 #         duplicates.append(num)
-# print(f"uniques: {uniques}")
-# print(f"Duplicates:  {duplicates}")
+# print(f"uniques: {uniques}\nDuplicates:  {duplicates}")
 # ====================================================================================
+# CONTAINS DUPLICATES
+# def containsDuplicate(nums):
+#     for i in range(len(nums)):
+#         for j in range(i + 1, len(nums)):
+#             if nums[i] == nums[j]:
+#                 return True
+#     else:
+#         return False
+# # nums = [1,2,3,1]
+# nums = ["Aman", "Akanksha", "Divyansha", "Devyansh", "Aman", "Diksha", "Akanksha"]
+# print(containsDuplicate(nums))
+# ************************************************************************************
 
-# LIST DIVIDE BY N
+# # LIST DIVIDE BY N
 # l = [1,2,3,4,5,6]
 # def divideByN(data, n):
 #         return [data[i*n: (i+1)*n] for i in range(len(data)//n)]
 # print(divideByN(l,2))
-# [[1, 2], [3, 4], [5, 6]]
+# # [[1, 2], [3, 4], [5, 6]]
 # print(divideByN(l,3))
-# [[1, 2, 3], [4, 5, 6]]
+# # [[1, 2, 3], [4, 5, 6]]
 
 # # GENERATORS VS ITERATORS
 # def my_range(start, end):
@@ -130,14 +144,15 @@ Given an unsorted array of integers, find the number of subarrays having a sum e
 #         current += 1
 # nums = my_range(1,10)
 # # GENERATORS TEST
-# # print(next(nums))
-# # print(next(nums))
-# # print(next(nums))
-# # print(next(nums))
-# # print(next(nums))
-# # ITERATORS TEST
-# # for num in nums:
-# #     print(num)
+# print(next(nums))
+# print(next(nums))
+# print(next(nums))
+# print(next(nums))
+# print(next(nums))
+# ITERATORS TEST
+# nums = range(1, 5)
+# for num in nums:
+#     print(num)
 # ============================================================================================
 
 # # CODE TO SWAP TWO NUMBERS
@@ -147,7 +162,7 @@ Given an unsorted array of integers, find the number of subarrays having a sum e
 # print(p, q)
 # =====================================================================
 
-# # Longest substring without repeating characters
+# # LENGTH OF Longest substring without repeating characters
 # class Solution:
 #     def lenthOfLongestSubstring(self, s: str) -> int:
 #         x = len(s)
@@ -184,8 +199,13 @@ Given an unsorted array of integers, find the number of subarrays having a sum e
 # result = solution.findMedianSortedArray(nums1,nums2)
 # print(result)
 # ====================================================================
-
-# # CONTAINER WITH MOST WATER --- FINDING MAX AREA
+"""
+CONTAINER WITH MOST WATER / MAX AREA / HISTOGRAM LARGEST RECTANGLE
+Given non-negative integers a1,a2, ...,an, where each represents a point at coordinate (i,ai).n vertical 
+lines are drawn such that the two endpoints of line is at (i,ai) and (i, 0). Find two lines, which together 
+with x-axis forms a container, such that the container contains the most water.
+Note: You may not slant the container and n is at least 2.
+"""
 # class Solution(object):
 #     def maxArea(self, height):
 #         low = 0
@@ -208,6 +228,37 @@ Given an unsorted array of integers, find the number of subarrays having a sum e
 # # result = obj1.maxArea([1,8,6,2,5,4,8,3,7])
 # result = obj1.maxArea([2,1,5,6,2,3])
 # print(result)
+# *************************************
+# class Solution(object):
+#     def maxArea(self, height):
+#         max_area = 0
+#         i=0
+#         j = len(height) - 1
+#         while i<j:
+#             max_area = max(max_area, min(height[i], height[j])*(j-i))
+#             if height[i] < height[j]:
+#                 i += 1
+#             else:
+#                 j -= 1
+#         return max_area
+# sol = Solution()
+# # result = obj1.maxArea([1,8,6,2,5,4,8,3,7])
+# result = sol.maxArea([2,1,5,6,2,3])
+# print(result)
+# def largest_rectangle(heights):
+#     heights = [-1]+heights+[-1]
+#     max_area = 0
+#     stack = [(0, 1)]
+#     for i in range(1, len(heights) - 1):
+#         start = i
+#         while stack[-1][1] > heights[i]:
+#             top_index, top_height = stack.pop()
+#             max_area = max(max_area, top_height*(i-top_index))
+#             start = top_index
+#         stack.append((start, heights[i]))
+#     return max_area
+# heights = [2,1,5,6,2,3] # [2,5,3,1,3,7]
+# print(largest_rectangle(heights))
 # ===================================================================
 
 # # CONVERT INTEGER TO ROMAN FIGURES
@@ -267,15 +318,13 @@ Given an unsorted array of integers, find the number of subarrays having a sum e
 # print(romanToInt("MCMXCIX"))
 # ===============================================================================
 
-# # Finding all indices of a target item in a list
+# # FINDING INDICES OF TARGET ELEMENT IN A LIST
 # def searchRange(search_list, target):
 #     indices = []
 #     for (index, item) in enumerate(search_list):
 #         if item == target:
 #             indices.append(index)
 #     return indices
-#     # else:
-#     #     return None
 # # a_list = [3, 6, 38, 6, 7, 38]
 # # target = 38
 # target = 'twitter'
@@ -283,6 +332,7 @@ Given an unsorted array of integers, find the number of subarrays having a sum e
 # print(searchRange(a_list, target))
 # =======================================================================================
 
+# # FINDING WORD FROM A BOARD
 # class Solution(object):
 #    def exist(self, board, word):
 #       n =len(board)
@@ -299,7 +349,8 @@ Given an unsorted array of integers, find the number of subarrays having a sum e
 #       if row>= len(board) or row < 0 or col >= len(board[0]) or col<0 or word[i] != board[row][col]:
 #          return False
 #       board[row][col] = '*'
-#       res = self.find(board,word,row+1,col,i+1) or self.find(board,word,row-1,col,i+1) or self.find(board,word,row,col+1,i+1) \
+#       res = self.find(board,word,row+1,col,i+1) or self.find(board,word,row-1,col,i+1)
+#       or self.find(board,word,row,col+1,i+1) \
 #             or self.find(board,word,row,col-1,i+1)
 #       board[row][col] = word[i]
 #       return res
@@ -307,8 +358,8 @@ Given an unsorted array of integers, find the number of subarrays having a sum e
 # print(ob1.exist([["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]],"SEE"))
 # ===============================================================================================
 
-# LINEAR SEARCH
-# # #Linear Search for target in data elements list
+# # LINEAR SEARCH
+# # #Linear Search for target in a list of data elements
 # data = [2,4,5,7,8,9,12,14,17,19,22,25,27,28,33,37]
 # target = 27
 # def linear_search(data, target):
@@ -324,40 +375,20 @@ Given an unsorted array of integers, find the number of subarrays having a sum e
 # data = [2,4,5,7,8,9,12,14,17,19,22,25,27,28,33,37]
 # target = 17
 # def bs_iter(data, target):
-#     low = 0
-#     high = len(data) - 1
-#     while low <= high:
-#         mid = (low+high) // 2
+#     left = 0
+#     right = len(data) - 1
+#     while left <= right:
+#         mid = (left+right) // 2
 #         if target == data[mid]:
-#             return True, data.index(target)
-#         elif target < data[mid]: # if target in low half
-#             high = mid - 1
-#         else: # if target in high half
-#             low = mid + 1
+#             return f"True, Target found at index: {data.index(target)}" # {mid}
+#         elif target < data[mid]: # if target in left half
+#             right = mid - 1
+#         else: # if target in right half
+#             left = mid + 1
 #     return False
 # x = bs_iter(data, target)
 # print(x)
 # =======================================================================
-
-# # Recursive Binary Search
-# data = [2,4,5,7,8,9,12,14,17,19,22,25,27,28,33,37]
-# target = 33
-# low = 0
-# high = len(data) - 1
-# def bs_recurs(data, target, low, high):
-#     if low > high:
-#         return "Not found"
-#     else:
-#         mid = (low + high) // 2
-#         if target == data[mid]:
-#             return f"Found at index {mid}"
-#         elif target < data[mid]:
-#             return bs_recurs(data, target, low, mid-1)
-#         else:
-#             return bs_recurs(data, target, mid+1, high)
-# x = bs_recurs(data, target, low, high)
-# print(x)
-# ****************         ***************           *************
 
 # # ITERATIVE BINARY ARRAY SEARCH
 # def binary_itr(arr, start, end, target):
@@ -401,6 +432,25 @@ Given an unsorted array of integers, find the number of subarrays having a sum e
 # verify(result)
 # ===================================================================
 
+# # RECURSIVE BINARY SEARCH
+# data = [2,4,5,7,8,9,12,14,17,19,22,25,27,28,33,37]
+# target = 33
+# low = 0
+# high = len(data) - 1
+# def bs_recurs(data, target, low, high):
+#     if low > high:
+#         return "Not found"
+#     else:
+#         mid = (low + high) // 2
+#         if target == data[mid]:
+#             return f"Found at index {mid}"
+#         elif target < data[mid]:
+#             return bs_recurs(data, target, low, mid-1)
+#         else:
+#             return bs_recurs(data, target, mid+1, high)
+# x = bs_recurs(data, target, low, high)
+# print(x)
+# ****************         ***************           *************
 # def recursive_binary_search(list, target):
 #     if len(list) == 0:
 #         return False
@@ -421,18 +471,18 @@ Given an unsorted array of integers, find the number of subarrays having a sum e
 # =========================================================================================
 """
 NUMBER GUESSING GAME
-Implement Binary Search Method
+Implement Binary Search Method  ==== do same for linear search
 """
 # import random
 # secret_number = random.randint(1, 50)
 # while True:
-#     guess = int(input("Guess the number between 1 and 50: "))
+#     guess = int(input("Guess a number between 1 and 50: "))
 #     if guess == secret_number:
 #         print("Congratulations! You got it!")
 #         break
-#     elif guess < secret_number:
+#     elif guess < secret_number: # secret number is on lower end
 #         print("Too low! Try again.")
-#     else:
+#     else: # secret number is on upper end
 #         print("Too high! Try again.")
 # ================================================================================================
 # ARRAYS basically a python list

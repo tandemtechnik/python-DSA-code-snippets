@@ -19,15 +19,15 @@ And also, just show True/False
 #     return evens
 # even_nums = common_evens(nums)
 # common_values = [i for i in even_nums if i in lst]
-# # common_values = [i for i in even_nums if i not in lst]
+# non_common_values = [i for i in even_nums if i not in lst]
 # # common_values = [i for i in nums if i in lst]
 # # print(common_values)
-# print(f"Even numbers: {even_nums}, Common values: {common_values}")
-# # ***************************************
-# # if set(even_nums).intersection(lst):
-# #     print('Lists have elements in common')
-# # else:
-# #     print('No elements in common')
+# print(f"Even numbers: {even_nums}\nCommon values: {common_values}\nNon_Common Values: {non_common_values}")
+# ***************************************
+# if set(even_nums).intersection(lst):
+#     print('Lists have elements in common')
+# else:
+#     print('No elements in common')
 # ***************************************************
 """
 LISTS SUBSET -- INTERSECTION
@@ -53,24 +53,16 @@ BRUTE FORCE METHOD
 a function to find intersection of two lists
 """
 # def intersection(lst1, lst2):
-#     # a new list to keep track of common elements in lst1 and lst2
-#     lst3 = []
-#     #iterate over all elements in lst1
-#     for value in lst1:
-#         #check for each element of lst1 if it's present in lst2
-#         if value in lst2:
-#             #if true, add the common element to the new list
-#             lst3.append(value)
-#     #we can shorten the four lines of code above
-#     #using this code ----
+#     lst3 = [] # an empty list to keep track of common elements in lst1 and lst2
+#     for value in lst1: #iterate over all elements in lst1
+#         if value in lst2: # check for each element of lst1 if it's present in lst2
+#             lst3.append(value)  #if true, add the common element to the new list
+#     #we can shorten the four lines of code above using this code ----
 #     # lstx = [value for value in lst1 if value in lst2]
 #     # return lstx
 #     return lst3
-#
-# # example of two lists to test the intersection program
 # lst1 = [1,2,5,1]
 # lst2 = [5,2]
-# # print the final output
 # print(intersection(lst1, lst2))
 # ======================================================================================
 
@@ -81,13 +73,14 @@ a function to find intersection of two lists
 #     left = lis[i]
 #     this = lis[i+1]
 #     right = lis[i+2]
+#     # if left > this < right:
 #     if this < left and this < right:
 #         output.append(this)# [3,2,1]
 # print(output)
 # ====================================================================
 """
 SUM OF CONSECUTIVE TWO ELEMENT IN ARRAY
-Finding the sum of consecutive two elements in an array of numbers
+Finding the sum of consecutive two elements in an array of numbers ----- nice!!!
 """
 # lis = [1,10,100,1000,10000]
 # output = []
@@ -98,7 +91,7 @@ Finding the sum of consecutive two elements in an array of numbers
 #     output.append(this+next)# [11,110,1100,11000]
 # for i in output:
 #     sum_ += i
-# print(output, sum_)
+# print(f"Output: {output} \nSum: {sum_}")
 # ************************************
 
 # # Combining consecutive strings together:
@@ -135,10 +128,9 @@ Finding the sum of consecutive two elements in an array of numbers
 # # print(f"Result: {my_result}. Total: {sum}")
 # print("Sums: ",sums)
 # print("Total: ",total)
-
 # ==================================================================
 
-# # Turing coding challenge
+# # STRINGS MANIPULTION  ----  Turing coding challenge
 # input = "*************"
 # el_1 = input[:2]
 # el_2 = input[3:]
@@ -162,9 +154,10 @@ Finding the sum of consecutive two elements in an array of numbers
 #     return filtered_list
 # numz = [-3, -2, -1, 0, 1, 2, 3]
 # result = func(numz)
-# next(result)
+# # next(result)
 # print(next(result))
 # *********************************
+
 # def zip_func(list1, list2):
 #     zipped = zip(list1, list2)
 #     result = [(a, b) for a, b in zipped if a != b]
@@ -182,11 +175,11 @@ Finding the sum of consecutive two elements in an array of numbers
 # ****************************************
 
 # def my_func(value):
-#     if value == 5:
+#     if value == 6:
 #         return ["Python"]
 #     else:
 #         yield from range(value)
-# print(list(my_func(5)))
+# print(list(my_func(4)))
 # ===============================================
 """
 By default all objects are true unless they are mentioned as false. 
@@ -224,6 +217,11 @@ So the else condition is compiled and it gives a list of even numbers.
 
 # a = [1, 2, 3]
 # b = a.append(4)
+# print(a, b)
+# # *******************
+# a = [1, 2, 3]
+# b = a
+# b.append(4)
 # print(a, b)
 # ****************************************
 #
@@ -270,8 +268,8 @@ So the else condition is compiled and it gives a list of even numbers.
 # lst = [1, 2, 3, 4]
 # for idx, nums in enumerate(lst):
 #     # del(nums)
-#     print(idx, nums) #(f"{idx}: {nums}")
-# print(lst)
+#     print(f"{idx}: {nums}")
+# # print(lst)
 # ***********************************
 # for idx, num in enumerate(range(1,13)):
 #     print(f"{idx:5}: {num}")
@@ -297,38 +295,41 @@ So the else condition is compiled and it gives a list of even numbers.
 #         return gcd(a-b, b)
 #     return gcd(a, b-a)
 # print(gcd(8, 12))
-# # 	print('GCD of', a, 'and', b, 'is', gcd(a, b))
-# # else:
-# # 	print('not found')
+# a = 8
+# b = 12
+# print(f'The GCD of {a} and {b} is: ', gcd(a, b))
+# else:
+# 	print('not found')
 # # import math
 # # print(math.gcd(15, 45))
 # # **************************************************
 # def func(x):
 #     x *= 2
-#     # return x
-# num = 15 and 6
+#     return x
+# num = 15 and 6 # num takes the second value
 # print(num)
-# # print(func(num))
+# print(func(num))
 # **************************************************
 
 # def modify_str():
 #     str1 = ("I Love Python")
+#     str1.replace("Love", "Enjoy").split()
 #     # str1 = str1.replace("Love", "Enjoy").split()
 #     return str1
 # print(modify_str())
 # ***************************************************
+
 # # DICTIONARY SORTING
 # browsers = {'google chrome': 2013, 'fire fox': 2012, 'explorer': 2023, 'opera':2021}
 # sorted_dict = sorted(browsers)
 # print(sorted_dict)
 # sorted_by_keys = dict(sorted(browsers.items()))
 # print(sorted_by_keys)
-#
-# sorted_by_values = dict(sorted(browsers.items(),key=lambda x: x[1]))
+# sorted_by_values = dict(sorted(browsers.items(), key=lambda x: x[1]))
 # print(sorted_by_values)
 # ***********************************************************************
 
-# TIMER DECORATOR FUNCTION
+# # TIMER DECORATOR FUNCTION
 # import time
 # def time_func(func):
 #     def wrapper(*args, **kwargs):

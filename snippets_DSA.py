@@ -48,7 +48,6 @@ Function to check string is palindrome or not
 # def modify_str():
 #     str1 = "I love Python"
 #     str1.replace("love", "enjoy").split()
-#     # str1 = str1.replace("love", "enjoy").split()
 #     return str1
 # print(modify_str())
 # # ================================
@@ -67,7 +66,7 @@ Function to check string is palindrome or not
 #     char1 = string1[idx]
 #     char2 = string2[idx]
 #     if char1 == char2:
-#         print(char1)
+#         print(char1, end=' ')
 # ==================================================================================
 
 # # Find Fixed Point in array of numbers
@@ -89,10 +88,10 @@ Interative solution (Brute Force)
 #     for i in range(len(input_str)):
 #         count += 1
 #     return count
-# input_str = "TandemTechniques"
+# input_str = "Tandem Techniques"
 # x = str_iter(input_str)
 # print(x)
-# # print(len(input_str))
+# print(len(input_str))
 # ============================================================================
 
 # # ADD NUMBERS FROM TWO LISTS
@@ -109,28 +108,15 @@ Interative solution (Brute Force)
 # sol = Solution()
 # ans = sol.addnums(l1, l2)
 # print(ans)
-# =============================================================================
-
-# Intersection of two lists
-# A = [2, 3, 3, 5, 7, 11]
-# B = [3, 3, 7, 15, 31]
-# # print(set(A).intersection(B))
-# def intersect(A, B):
-#     i = 0
-#     j = 0
-#     intersection = []
-#     while i < len(A) and j < len(B):
-#         if A[i] == B[j]:
-#             if i == 0 or A[i] != A[i-1]:
-#                 intersection.append(A[i])
-#             i += 1
-#             j += 1
-#         elif A[i] < B[j]:
-#             i += 1
-#         else: # A[i] > B[j]
-#             j += 1
-#     return intersection
-# print(intersect(A, B))
+#
+# def addall(n):
+#     sum = 0
+#     for i in range(n):
+#         sum += i
+#     return sum
+# numbers = int(input("Enter number: " )) # range(1,7) #[2, 5, 7, 12]
+# result = addall(numbers)
+# print(result)
 # ================================================================================
 
 # # STRINGS ... Find first occurrence of uppercase
@@ -141,7 +127,7 @@ Interative solution (Brute Force)
 # def find_upper_case(input_str):
 #     for x in range(len(input_str)):
 #         if input_str[x].isupper():
-#             return input_str[x]
+#             return input_str[x], x
 #     return "No uppercase found!"
 # print(find_upper_case(input_str_1))
 # print(find_upper_case(input_str_2))
@@ -195,7 +181,7 @@ Interative solution (Brute Force)
 #     for i in range(length):
 #         for j in range(i + 1, length):
 #             if nums[i] + nums[j] == target:
-#                 print(nums[i], nums[j]) # returns the numbers
+#                 print(nums[i], nums[j]) # prints the numbers
 #                 return [i, j]  # returns the numbers index
 # nums = [-2, 3, 5, 4, 8, 9]
 # target = 13
@@ -203,7 +189,7 @@ Interative solution (Brute Force)
 # =====================================================================================
 
 # # CONSONANTS AND VOWELS COUNT IN A GIVEN STRING
-# input_str_1 = "abc de"
+# input_str_1 = "abcT de"
 # # input_str_2 = "TandemtEcHniQEs"
 # vowels = "aeiou"
 # def consonants_count(input_str):
@@ -274,13 +260,11 @@ Interative solution (Brute Force)
 #     if size(stack) == 0:
 #         return True
 #
-# # Function to add an item to stack . It
-# # increases size by 1
+# # Function to add an item to stack . It increases size by 1
 # def push(stack, item):
 #     stack.append(item)
 #
-# # Function to remove an item from stack.
-# # It decreases size by 1
+# # Function to remove an item from stack. It decreases size by 1
 # def pop(stack):
 #     if isEmpty(stack):
 #         return
@@ -297,8 +281,7 @@ Interative solution (Brute Force)
 #     for i in range(0, n, 1):
 #         push(stack, string[i])
 #
-#     # Making the string empty since all
-#     # characters are saved in stack
+#     # Making the string empty since all characters are saved in stack
 #     string = ""
 #
 #     # Pop all characters of string and put them back to string
@@ -314,8 +297,8 @@ Interative solution (Brute Force)
 # ===================================================================================
 
 # ODD or EVEN NUMBERS ----- determination
-# ASSUME: Even number plus 1  results odd. Even plus even results even
 # Find Binary reps of the int, then AND 1
+# ASSUME: Even number plus 1 results odd. Even plus even, results even
 # def is_even_odd(x: int):
 #     if x & 1 == 0:
 #         return "Even"
@@ -398,9 +381,9 @@ of the input integer, then the integer is an ugly number.
 #     return num == 1
 # print(is_ugly(24))
 # print(is_ugly(13))
-# ===========================================================================================
+# ********************************************************************************
 
-# # SORTED ARRAY
+# # INDEX OF FIRST AND LAST POSITION OF TARGET IN A SORTED ARRAY
 # # Find the index of first and last positions of target in a given sorted array
 # arr = [2, 4, 5, 5, 5, 5, 5, 7, 9, 9]
 # target = 5
@@ -413,16 +396,8 @@ of the input integer, then the integer is an ugly number.
 #             return [start, i]
 #     return [-1, -1]
 # print(find_first_and_last(arr, target))
-
-"""
-****************************************
-arr = [2, 4, 5, 5, 5, 5, 5, 7, 9, 9]
-for i in range(len(arr)): # prints the index of arr
-# for i in arr: # prints the elements of arr
-    print(i)
-****************************************
-"""
-# BINARY SEARCH
+# **********************************************
+# BINARY SEARCH FOR ARRAY START
 # def find_start(arr, target):
 #     if arr[0] == target:
 #         return 0
@@ -439,7 +414,8 @@ for i in range(len(arr)): # prints the index of arr
 # arr = [2, 4, 5, 5, 5, 5, 5, 7, 9, 9]
 # target = 5
 # print(find_start(arr, target))
-#
+# **********************************************
+# BINARY SEARCH FOR ARRAY END
 # def find_end(arr, target):
 #     if arr[-1] == target:
 #         return len(arr) - 1
@@ -499,25 +475,6 @@ output:
 # n = 3
 # print(generate(n))
 # =============================================================================
-"""
-LARGEST RECTANGLE
-Find the largest rectangle in a given histogram
-"""
-# def largest_rectangle(heights):
-#     heights = [-1]+heights+[-1]
-#     max_area = 0
-#     stack = [(0, 1)]
-#     for i in range(1, len(heights) - 1):
-#         start = i
-#         while stack[-1][1] > heights[i]:
-#             top_index, top_height = stack.pop()
-#             max_area = max(max_area, top_height*(i-top_index))
-#             start = top_index
-#         stack.append((start, heights[i]))
-#     return max_area
-# heights = [2,5,3,1,3,7]
-# print(largest_rectangle(heights))
-# ============================================================================
 """
 UNIQUE PATHS
 Given two integers representing the size of a grid. using the size of the grid, the length, 
@@ -594,12 +551,14 @@ store 0 instead. For example, if T = [73, 74, 75, 71, 69, 72, 76, 73], output wi
 # # With index and Value
 # for i, n in enumerate(nums):
 #     print(i, n)
+# ************************************
 
 # SORTING BY SECOND LETTER
 # z = ('Kelvin', 'Niklaus', 'Jenny', 'Craig')
 # print(sorted(z))
 # print(sorted(z, key=lambda K: K[1]))
-
+# *********************************************
+# SQUARED NUMBER FUNCTION
 # def get_squared_numbers(numbers):
 #     squared_numbers = []
 #     for n in numbers:
@@ -609,7 +568,8 @@ store 0 instead. For example, if T = [73, 74, 75, 71, 69, 72, 76, 73], output wi
 # numbers = [2, 5, 8, 9]
 # print(get_squared_numbers(numbers))
 # # ******************************************
-# DUPLICATES
+
+# # DUPLICATES
 # numbers = [3, 6, 2, 4, 3, 6, 8, 9]
 #
 # for i in range(len(numbers)):
@@ -618,49 +578,228 @@ store 0 instead. For example, if T = [73, 74, 75, 71, 69, 72, 76, 73], output wi
 #         if numbers[i] == numbers[j]:
 #             print(f"{numbers[i]} ia a duplicate")
 #             # break
-# *****************************************
+# ***********************************
+# # Python program to print duplicates from a list of integers
+# def Repeat(x):
+#     _size = len(x)
+#     duplicates = []
+#     for i in range(_size):
+#         k = i + 1
+#         for j in range(k, _size):
+#             if x[i] == x[j] and x[i] not in duplicates:
+#                 duplicates.append(x[i])
+#     return duplicates
 #
+# list1 = [10, 20, 30, 20, 20, 30, 40, 50, -20, 60, 60, -20, -20]
+# print(Repeat(list1))
+# *******************************************************
+
+# STRING SLICING
 # heros = ['spider man', 'thor', 'hulk', 'iron man', 'captain america']
 # heros[1:4] = ['doctor strange']
 # print(heros)
 # # ***************************************
+
 # ODD NUMBERS FROM N
-# max_num = int(input("Pls enter any number: "))
+# number = int(input("Pls enter any number: "))
 # odd_nums = []
-# for num in range(1, max_num):
+# odd_total = 0
+# for num in range(1, number):
 #     # print(num)
 #     if num % 2 == 1:
 #         odd_nums.append(num)
-# print(odd_nums)
+#         odd_total += num
+# print(f"{odd_nums} \n{odd_total}")
 # # *******************************************
+
 # FIND AVERAGE OF NUMBERS
 # Python code to get average of list
 # def Average(lst):
 #     sum_of_list = 0
 #     # for i in range(len(lst)):
-#     for i in lst:
+#     for nums in lst:
 #         # sum_of_list += lst[i]
-#         sum_of_list += i
+#         sum_of_list += nums
 #         average = sum_of_list/len(lst)
 #     return average
-#
-# # Driver Code
+
 # lst = [15, 9, 55, 41, 35, 20, 62, 49]
-# average = Average(lst)
-# print("Average of the list =", round(average, 2))
+# avrg = Average(lst)
+# print(f"Average of the list = {round(avrg, 2)}")
 # ***********************
+
 # def calculate_average(values):
 #     if type(values) is not str:
 #         if "__iter__" in dir(values):
 #             sum_expr = "+".join(str(v) for v in values)
-#             avg_expr = f"({sum}) / {len(values)}"
+#             avg_expr = f"({sum_expr}) / {len(values)}"
 #             average = eval(avg_expr)
 #             return average
 #         else:
 #             return None
 #     return values
-# items = "[12, 34, 56, 78]"
-# # items = [12, 34, 56, 78]
+# # items = "[12, 34, 56, 78]"
+# items = [12, 34, 56, 78]
 # result = calculate_average(items)
 # print(result)
 # ********************************************************
+
+# REMOVE ELEMENT FROM LIST
+# class Solution(object):
+#     def removeElement(self, nums, val):
+#
+#         if val == []:
+#             return 0
+#         else:
+#             i = 0
+#             j = 0
+#             while j < len(nums):
+#                 if nums[j] == val:
+#                     j += 1
+#                 else:
+#                     nums[i] = nums[j]
+#                     i += 1
+#                     j += 1
+#         return len(nums[0:i])
+# nums = [3,2,2,3]
+# val = 3
+# soln = Solution()
+# result = soln.removeElement(nums, val)
+# print(result)
+# *********************************************************************
+"""
+REVERSE STRING
+Write a function that takes a string as input and returns the string reversed. 
+Example: Given s = "hello", return "olleh".
+"""
+# class Solution(object):
+#     def reverseString(self, s):
+#         current_str = [char for char in s]
+#         i=0
+#         j = len(s) - 1
+#         while i < j:
+#             temp = current_str[i]
+#             current_str[i] = current_str[j]
+#             current_str[j] = temp
+#             j -= 1
+#             i += 1
+#         return "".join(current_str)
+#
+# s = "TANDEM TECHNIQUES"
+# soln = Solution()
+# result = soln.reverseString(s)
+# print(result)
+# ***********************************************************
+"""
+MERGE SORTED ARRAYS
+Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.
+Note: You may assume that nums1 has enough space (size that is greater or equal to m + n) 
+to hold additional elements from nums2. 
+The number of elements initialized in nums1 and nums2 are m and n respectively.
+"""
+# class Solution(object):
+#     def merge(self, nums1, m, nums2, n):
+#         last1 = m - 1
+#         last2 = n - 1
+#         last = m + n - 1
+#         while last1 >= 0 and last2 >= 0:
+#             if nums1[last1] > nums2[last2]:
+#                 nums1[last] = nums1[last1]
+#                 last1 -= 1
+#                 last -= 1
+#             else:
+#                 nums1[last] = nums2[last2]
+#                 last2 -= 1
+#                 last -= 1
+#         while last2 >= 0:
+#             nums1[last] = nums2[last2]
+#             last -= 1
+#             last2 -= 1
+# ************************************************************
+# # REVERSE LINKED LIST
+# class Solution(object):
+#     def reverseList(self, head):
+#         if head == None:
+#             return None
+#         elif head != None and head.next == None:
+#             return head
+#         else:
+#             temp = None
+#             next_node = None
+#             while head != None:
+#                 next_node = head.next
+#                 head.next = temp
+#                 temp = head
+#                 head = next_node
+#             return temp
+# *********************************************************************
+"""
+DELETE NODE IN A LINKED LIST
+Write a function to delete a node (except the tail) in a singly linked list, given only access to that node.
+Supposed the linked list is 1 -> 2 -> 3 -> 4 and you are given the third node with value 3, 
+the linked list should become 1 -> 2 -> 4 after calling your function.
+"""
+# def __init__(self, x):
+#     self.val = x
+#     self.next = None
+# class Solution(object):
+#     def deleteNode(self, node):
+#
+#         if node == None:
+#             pass
+#         else:
+#             next_node = node.next
+#             node.val = next_node.val
+#             node.next = next_node.next
+# ***********************************************************************
+"""
+PAINT FENCE
+There is a fence with n posts, each post can be painted with one of the k colors.
+You have to paint all the posts such that no more than two adjacent fence posts have the same color.
+Return the total number of ways you can paint the fence. Note: n and k are non-negative integers.
+"""
+# class Solution(object):
+#     def numWays(self, n, k):
+#         dp = [0, k, k*k, 0]
+#         if n <= 2:
+#             return dp[n]
+#         for i in range(2, n):
+#             dp[3] = (k-1)*(dp[1] + dp[2])
+#             dp[1] = dp[2]
+#             dp[2] = dp[3]
+#         return dp[3]
+# ************************************************************
+"""
+BULB SWITCHER
+There are n bulbs that are initially off. You first turn on all the bulbs. Then, you turn off every second bulb. 
+On the third round, you toggle every third bulb (turning on if it's off or turning off if it's on). 
+For the ith round, you toggle every i bulb. For the nth round, you only toggle the last bulb. 
+Find how many bulbs are on after n rounds.
+Example: Given n = 3.
+At first, the three bulbs are [off, off, off]. After first round, the three bulbs are [on, on, on]. 
+After second round, the three bulbs are [on, off, on]. After third round, the three bulbs are [on, off, off].
+So you should return 1, because there is only one bulb is on.
+"""
+# import math
+# class Solution(object):
+#     def bulbSwitch(self, n):
+#         return int(math.sqrt(n))
+# ***********************************************************************
+
+# # SEARCH INSERT POSITION
+# class Solution:
+#   def searchInsert(self, nums: list[int], target: int) -> int:
+#     l = 0
+#     r = len(nums)
+#
+#     while l < r:
+#       m = (l + r) // 2
+#       if nums[m] == target:
+#         return m
+#       if nums[m] < target:
+#         l = m + 1
+#       else:
+#         r = m
+#
+#     return l
+# *********************************************************************
