@@ -1584,8 +1584,7 @@ Below is the management hierarchy of a company.
 #     root.add_child(usa)
 #
 #     return root
-#
-#
+
 # if __name__ == '__main__':
 #     root_node = build_location_tree()
 #     root_node.print_tree(3)

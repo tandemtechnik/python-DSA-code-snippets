@@ -62,7 +62,7 @@
 # TIMERS IN CODE EXECUTION
 # import time
 # for i in range(10,0,-1):
-#     print("1")
+#     print(i)
 #     time.sleep(1)
 # print("Happy New Year!!!")
 # ===================================================
@@ -71,15 +71,9 @@
 # phone = "123-456-7890"
 # for i in phone:
 #     if i == "-":
-#         pass # break
+#         break # continue and pass behave same
 #     else:
 #         print(i, end="")
-# ==============================
-# phone = "123-456-7890"
-# for i in phone:
-#     if i == "-":
-#         continue
-#     print(i, end="")
 # =======================================================
 
 # NESTED LOOPS: The inner loop will complete its iteration before finishing one outer loop iteration
@@ -137,7 +131,7 @@
 #     sum_ = 0
 #     args = list(args)
 #     args[0] = 5
-#     print(args)
+#     # print(args)
 #     for x in args:
 #         sum_ += x
 #     return sum_
@@ -160,7 +154,7 @@
 # random.shuffle(cards)
 # print(cards)
 # ============================================
-# import random
+import random
 # class Dice:
 #     def roll_dice(self, first, second):
 #         self.first = first
@@ -191,7 +185,7 @@
 #     i = 0
 #     new_list = []
 #     while i < len(list):
-#         if list[i] != "": # Stop adding when "" is encountered
+#         if list[i] != '':  # Stop adding when "" is encountered
 #             new_list.append(list[i])
 #         else:
 #             break
@@ -203,7 +197,7 @@
 
 # WALRUS OPERATOR:
 # print(happy := True)
-# =====================================
+# # =====================================
 # foods = []
 # while food := input("What food do you like?") != 'quit':
 #     foods.append(food)
@@ -227,11 +221,10 @@
 # REDUCE
 # import functools
 # factorial = [5,4,3,2,1]
-# result = functools.reduce(lambda x, y,:x * y, factorial)
-# print(result)
-
+# result = functools.reduce(lambda x, y: x * y, factorial)
 # print(result)
 # ==================
+
 # letters = ["H", "E", "L", "L", "O"]
 # word = functools.reduce(lambda x, y,: x + y, letters)
 # print(word)
@@ -301,16 +294,17 @@
 # =============================================================
 
 # FILE OBJECT
-import os
+# import os
 # with open('aman.txt') as f: # Default is r for read
 #     my_file = f.read()
 # print(my_file)
-
-# with open('test.txt', 'w') as file:
-#     file.write(text)
-
+#
 # text = "This is some awesome testing text"
 # text1 = "This is another awesome testing text "
+#
+# with open('test.txt', 'w') as file:
+#     file.write(text)
+#
 # with open('gfg.txt', 'a') as file:
 #     file.write("\n" + text)
 #     file.write("\n" + text1)
@@ -343,7 +337,7 @@ import os
 
 # # PRODUCT OF ALL NUMBERS IN A LIST
 # mylist = [1, 2, 3, 4]
-# product = 1
+# product = 2
 # for i in range(len(mylist)):
 #     product = product * mylist[i]
 # print(product)
@@ -389,18 +383,20 @@ import os
 #         '9': 'Nine',
 #     }
 #     output = ''
-#     for nums in digits:
-#         output += digits_mapping.get(nums, "!") + " "
+#     for digit in digits:
+#         output += digits_mapping.get(digit, "!") + " "
 #     print(output)
 # ==================================================================
 
 # # Shallow copy:
 # original_list = [1, 2, 3, [4, 5]]
 # shallow_copy = original_list.copy()
+# # print(shallow_copy)
 # original_list[3].append(6)
 # print(original_list)
 # print(shallow_copy)
 # ===========================================
+
 # # Deep Copy:
 # import copy
 # original_list = [1, 2, 3, [4, 5]]
@@ -413,13 +409,13 @@ import os
 # # Coding Challenge
 # for i in range(3):
 #     for j in range(3):
-#         print(i*j, end=' ')
-    # print()
+#         print(i*j)
+#     print()
 # # 000012024
 #============================================================================
 
 # # Count number of words that contain letter "s"
-my_str = "Oranges and lemons, Say the bells of St. Clement's. " \
+# my_str = "Oranges and lemons, Say the bells of St. Clement's. " \
 #         "You owe me three farthings, Say the bells of St. Martin's"
 # def count_l(my_str):
 #     count = 0
@@ -544,7 +540,7 @@ my_str = "Oranges and lemons, Say the bells of St. Clement's. " \
 # print(name_adder(lst1))
 
 # # CONTINUE WITH FOR LOOP
-# weather=["snow", "rain", "sun", "clouds"]
+weather=["snow", "rain", "sun", "clouds"]
 # for i in weather:
 #     if i == "sun":
 #         continue # continue will continue, use break to end the iteration
@@ -557,7 +553,7 @@ my_str = "Oranges and lemons, Say the bells of St. Clement's. " \
 # # # Refrain from using the reverse parameter.
 # # (Hint: lambda will be passed to sort method's key parameter as argument)
 # lst = [100, 10, 10000, 1, 9, 999, 99]
-# lst.sort(key=lambda x: 100/x)
+# lst.sort(key=lambda x: 1000/x)
 # print(lst)
 
 # # Sorted Method with key=lambda function
@@ -619,7 +615,7 @@ my_str = "Oranges and lemons, Say the bells of St. Clement's. " \
 # print(lst2)
 # *******************************************************************
 # # Given a dictionary is consisted of vehicles and their weights in kilograms.
-# # Contruct a list of the names of vehicles with weight below 5000 kilograms.
+# # Construct a list of the names of vehicles with weight below 5000 kilograms.
 # # In the same list comprehension make the key names all upper case.
 # dict = {"Sedan": 1500, "SUV": 2000, "Pickup": 2500, "Minivan": 1600, "Van": 2400,
 #         "Semi": 13600, "Bicycle": 7, "Motorcycle": 110}
@@ -660,17 +656,7 @@ my_str = "Oranges and lemons, Say the bells of St. Clement's. " \
 # ====================================================================
 
 # # LISTS ADD USER INPUT
-# foods = []
-# while True:
-#     food = input("What food do you like?(or q to quit): ")
-#     if food == "q":
-#         break
-#     else:
-#         foods.append(food)
-# print()
-# print("----Your Foods List-----")
-# for fd in foods:
-#     print(fd.capitalize())
+#
 # =============================================
 
 # # SHOPPING CART
@@ -757,3 +743,12 @@ my_str = "Oranges and lemons, Say the bells of St. Clement's. " \
 #     height = heights[i]
 #     print(f"{name:12}: {height} meters")
 # ====================================================================================
+
+#
+# thisdict =	{
+#   "brand": "Ford",
+#   "model": "Mustang",
+#   "year": 1964
+# }
+# print(thisdict.items())
+

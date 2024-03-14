@@ -5,8 +5,8 @@
 # # result = increment_by(4)
 # print(result)
 # # The functions work like this:
-# increment_by(5, 2)
-# increment_by(4)
+# print(increment_by(5, 2))
+# print(increment_by(4))
 # ========================================================================
 #
 # # Declaring lists
@@ -94,13 +94,13 @@ given number k.
 #             else:
 #                 duplist.append(i)  # this method catches the first duplicate entries
 #
-#         return f"List of duplicates: {duplist}\nList of uniques:{uniqlist}"
+#         return f"\nList of duplicates: {duplist} \nList of uniques:{uniqlist}"
 #
 #
 # nums = [5, 3, 5, 2, 1, 6, 6, 4]  # the original list of integers with duplicates
 # # nums = ["Aman", "Akanksha", "Divyansha", "Devyansh", "Aman", "Diksha", "Akanksha"]
-# ob1 = Solution()
-# print(ob1.findDuplicate(nums))
+# obj = Solution()
+# print(obj.findDuplicate(nums))
 # # ====================================================
 #
 # # UNIQUES AND DUPLICATES
@@ -112,7 +112,7 @@ given number k.
 #         uniques.append(num)
 #     else:
 #         duplicates.append(num)
-# print(f"uniques: {uniques}\nDuplicates:  {duplicates}")
+# print(f"\nuniques: {uniques}\nDuplicates:  {duplicates}")
 # ====================================================================================
 # CONTAINS DUPLICATES
 # def containsDuplicate(nums):
@@ -127,7 +127,7 @@ given number k.
 # print(containsDuplicate(nums))
 # ************************************************************************************
 
-# # LIST DIVIDE BY N
+# # DIVIDE A GIVEN LIST BY N
 # l = [1,2,3,4,5,6]
 # def divideByN(data, n):
 #         return [data[i*n: (i+1)*n] for i in range(len(data)//n)]
@@ -195,8 +195,8 @@ given number k.
 #             return nums[len(nums)//2]
 # nums1 = [1,2,5,]
 # nums2 = [3,4,8,10]
-# solution = Solution()
-# result = solution.findMedianSortedArray(nums1,nums2)
+# sol = Solution()
+# result = sol.findMedianSortedArray(nums1,nums2)
 # print(result)
 # ====================================================================
 """
@@ -245,6 +245,7 @@ Note: You may not slant the container and n is at least 2.
 # # result = obj1.maxArea([1,8,6,2,5,4,8,3,7])
 # result = sol.maxArea([2,1,5,6,2,3])
 # print(result)
+# # *******************************************
 # def largest_rectangle(heights):
 #     heights = [-1]+heights+[-1]
 #     max_area = 0
@@ -493,7 +494,7 @@ Implement Binary Search Method  ==== do same for linear search
 # # A = [2,0,2,1,1,0]
 # C = []
 # while A:
-#     minimum =A[0]
+#     minimum = A[0]
 #     for x in A:
 #         if x < minimum:
 #             minimum = x
@@ -594,3 +595,44 @@ More efficient than other sort methods by computational cost
 # arr = [[6, 8], [1, 9], [2, 4], [4, 7]]
 # print(mergeIntervals(arr))
 # =====================================================================================
+# FIND EVEN VALUES IN A LIST
+
+# def even_values(nums):
+#     for value in nums:
+#         if value % 2 == 0:
+#             yield value # NOT ITERABLE, NO RANGE FUNCTION
+#
+# nums = [10, 3, 5, 7, 8]
+# evens = list(even_values(n))
+# print(evens) # [2, 4]
+
+#This code is contributed by Edula Vinay Kumar Reddy
+
+# def print_even_numbers(number_list):
+#     even_numbers = [] # define the empty list of even numbers, ITERABLE
+#     for number in number_list:
+#         if number % 2 == 0: # check if number is even
+#             even_numbers.append(number) # if it is, store it
+#     return even_numbers # Last step returns the list of even numbers
+# numbers = [1, 2, 3, 4, 5, 6, 8, 10]
+# print(print_even_numbers(numbers))
+# ************************************************
+
+# IMPLEMENTING RANGE FUNCTION WITH ITERABLE LIST
+# def code_mystery(n):
+#     even_numbers = [] # define the empty list of even numbers
+#     for i in range(n):
+#         if i % 2 == 0: # check if number is even
+#             even_numbers.append(i) # if it is, store it
+#     return even_numbers # Last step returns the list of even numbers
+# result = code_mystery(10)
+# print("The even numbers are: ", result)
+# ***********************************************************
+
+# IMPLEMENTING RANGE FUNCTION WITHOUT ITERABLE LIST
+# def code_mystery(n):
+# 	for i in range(n):
+# 		if i % 2 == 0:
+# 			return i
+# result = code_mystery(10)
+# print("The enigmatic number is: ", result)

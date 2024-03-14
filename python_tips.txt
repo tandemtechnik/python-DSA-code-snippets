@@ -10,3 +10,15 @@ a[-3::-1]  # everything except the last two items, reversed
 
 Python find() method finds substring in the whole string and returns index of the first match.
 It returns -1 if substring does not match.
+
+>>> 'abcdefghijklm'[2:10:3]  # start at 2, go upto 10, count by 3
+'cfi'
+>>> 'abcdefghijklm'[10:2:-1] # start at 10, go downto 2, count down by 1
+'kjihgfed'
+
+If the start and stop aren't specified, it means to go through the entire sequence:
+
+>>> 'abcdefghijklm'[::3]  # beginning to end, counting by 3
+'adgjm'
+>>> 'abcdefghijklm'[::-3] # end to beginning, counting down by 3
+'mjgda'

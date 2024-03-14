@@ -1,4 +1,369 @@
 """
+COMMON EVEN NUMBER ELEMENTS
+---------------------------
+LIST INTERSECTION
+CUSTOM ITERATIONS --- BRUTE FORCE
+CODING CHALLENGE ----- solve
+collect all the even numbers into a variable
+compare which elements in the variable are in the targets list
+Find values of even numbers in one list that is present in another list
+And also, just show True/False
+"""
+# nums = [72, 40, 38, 25, 20, 23, 51, 49]
+# lst = [73, 72, 38, 25, 20, 90, 72, 22, 44]
+# def common_evens(nums):
+#     evens = []
+#     for n in nums:
+#         if n % 2 == 0:
+#             evens.append(n)
+#     return evens
+# even_nums = common_evens(nums)
+# common_values = [i for i in even_nums if i in lst]
+# non_common_values = [i for i in even_nums if i not in lst]
+# # common_values = [i for i in nums if i in lst]
+# # print(common_values)
+# print(f"Even numbers: {even_nums}\nCommon values: {common_values}\nNon_Common Values: {non_common_values}")
+#
+# if set(even_nums).intersection(lst):
+#     print('Lists have elements in common')
+# else:
+#     print('No elements in common')
+# ***************************************************************************
+"""
+LISTS SUBSET -- INTERSECTION
+Given two lists A and B, write a Python program to Check if list A is contained in list B 
+without breaking A’s order. 
+"""
+# def is_sublist(A, B):
+#     if not A:
+#         return True
+#     if not B:
+#         return False
+#     if A[0] == B[0]:
+#         return is_sublist(A[1:], B[1:])
+#     return is_sublist(A, B[1:])
+# A = [1, 2]
+# B = [1, 2, 3, 1, 1, 2, 2]
+# result = is_sublist(A, B)
+# print(result)
+# *******************************************
+"""
+LIST INTERSECTION
+BRUTE FORCE METHOD
+a function to find intersection of two lists
+"""
+# def intersection(lst1, lst2):
+#     lst3 = [] # an empty list to keep track of common elements in lst1 and lst2
+#     for value in lst1: #iterate over all elements in lst1
+#         if value in lst2: # check for each element of lst1 if it's present in lst2
+#             lst3.append(value)  #if true, add the common element to the new list
+#     #we can shorten the four lines of code above using this code ----
+#     # lstx = [value for value in lst1 if value in lst2]
+#     # return lstx
+#     return lst3
+# lst1 = [1,2,5,1]
+# lst2 = [5,2]
+# print(intersection(lst1, lst2))
+# ======================================================================================
+
+# # Finding numbers smaller than both left & right neighbours:
+# lis = [5,3,4,6,2,7,1,8]
+# output = []
+# for i in range(len(lis)-2):
+#     left = lis[i]
+#     this = lis[i+1]
+#     right = lis[i+2]
+#     if left > this < right:
+#     # if this < left and this < right:
+#         output.append(this)# [3,2,1]
+# print(output)
+# ====================================================================
+"""
+SUM OF CONSECUTIVE TWO ELEMENT IN ARRAY
+Finding the sum of consecutive two elements in an array of numbers ----- nice!!!
+"""
+# lis = [1,10,100,1000,10000]
+# output = []
+# sum_ = 0
+# for i in range(len(lis)-1):
+#     this = lis[i]
+#     next = lis[i+1]
+#     output.append(this+next)# [11,110,1100,11000]
+# for i in output:
+#     sum_ += i
+# print(f"Output: {output} \nSum: {sum_}")
+# ************************************
+
+# # Combining consecutive strings together:
+# lis = ["apple", "orange", "pear", "durian"]
+# output = []
+# for i in range(len(lis)-1):
+#     this = lis[i]
+#     next = lis[i+1]
+#     output.append(this + " " + next)# ["apple orange", "orange pear", "pear durian"]
+# print(output)
+# ***********************************************
+
+# # SUM OF CONSECUTIVE TWO ELEMENT IN ARRAY ----- TURING CODING CHALLENGE
+# lst = [1, 5, 7, 8, 4]
+# total = 0
+# for i, j in zip(lst, lst[1:]):
+#     sum = i + j
+# #    print(i, j)
+# #   print(sum)
+#     total += sum
+# print(total)
+# ********************Better Algo below**********************
+# lst = [1, 5, 7, 8, 4]
+# sum = 0
+# output = []
+# for i in range(len(lst)-1):
+#     this = lst[i]
+#     next = lst[i + 1]
+#     output.append(this + next)
+# print(output)
+#
+# for i in output:
+#     sum += i
+# print(sum)
+# ========================================================
+
+# # SUM OF CONSECUTIVE TWO ELEMENT IN ARRAY
+# # my_list = [41, 27, 53, 12, 29, 32, 16]
+# my_list = [1, 5, 7, 8, 4]
+# # print("The list is :")
+# # print(my_list)
+# total = 0
+# # my_result = [a + b for a, b in zip(my_list, my_list[1:] + [my_list[0]])]
+# sums = [a + b for a, b in zip(my_list, my_list[1:] + [my_list[0]])]
+# for i in sums:
+#     total += i
+# # print(f"Result: {my_result}. Total: {sum}")
+# print("Sums: ",sums)
+# print("Total: ",total)
+# ==================================================================
+
+# # STRINGS MANIPULTION  ----  Turing coding challenge
+# input = "*************"
+# el_1 = input[:2]
+# el_2 = input[3:]
+# output = [el_1.replace("*", "-")] + [el_2]
+# output1 = [el_1.replace("*", "-") + el_2]
+# # print(el_1)
+# # print(el_2)
+# print(output)
+# print(output1)
+# *****************************************
+
+# # CODING CHALLENGE
+# age = 17
+# if age >= 18 or ...:
+#     print("I'm going to drive on my own")
+# else:
+#     print("I need a driver")
+# =====================================================================
+
+# from itertools import dropwhile
+# def func(array):
+#     filtered_list = dropwhile(lambda x:x < 0, array)
+#     return filtered_list
+# numz = [-3, -2, -1, 0, 1, 2, 3]
+# result = func(numz)
+# # next(result)
+# print(next(result))
+# *********************************
+
+# def zip_func(list1, list2):
+#     zipped = zip(list1, list2)
+#     result = [(a, b) for a, b in zipped if a != b]
+#     return *result,
+# list1 = [1, 2, 3, 4, 5]
+# list2 = [1, 3, 3, 4, 6]
+# output = zip_func(list1, list2)
+# print(output)
+# ***************************************
+# langs = ["java", "C++", "Rust"]
+# # for lang in langs:
+# # langs.append("Python")
+# langs.extend('Boa')
+# print(langs)
+# ****************************************
+
+# def my_func(value):
+#     if value == 6:
+#         return ["Python"]
+#     else:
+#         yield from range(value)
+# print(list(my_func(4)))
+# ===============================================
+"""
+By default all objects are true unless they are mentioned as false. 
+So the else condition is compiled and it gives a list of even numbers.
+"""
+# result = [x for x in range(10) if x % 2 != 0] if False else [x for x in range(10) if x % 2 == 0]
+# print(result)
+# ===================================================
+
+# snakes = ["Python", "Cobra", "Anaconda"]
+# snakes.extend("Boa")
+# print(snakes)
+# # ******************************
+
+# # Rounds off to the nearest even number
+# def round_off():
+#     num1 = round(9/2)
+#     num2 = round(7/2)
+#     # return num1, num2
+#     return num1 == num2
+# print(round_off())
+# **************************************
+
+# def process_data(data):
+#     unique_values = set()
+#     all_values = ()
+#
+#     for item in data:
+#         unique_values.add(item)
+#         all_values += (item,)
+#         return unique_values in all_values
+# data = [1, 2, 3, 2, 4, 5, 3, 6]
+# print(process_data(data))
+# **************************************
+
+# a = [1, 2, 3]
+# b = a.append(4)
+# print(a, b)
+# # *******************
+# a = [1, 2, 3]
+# b = a
+# b.append(4)
+# print(a, b)
+# ****************************************
+# #
+# a = [1, 2, 3]
+# b = a
+# b[1] = 4
+# print(a, b)
+# ******************************************
+
+# my_list = []
+# my_list += "Python"
+# print(my_list)
+#
+# my_list = []
+# my_list.append("Python")
+# print(my_list)
+# *******************************************
+
+# import pathlib
+# desktop = pathlib.Path("Downloads")
+# for item in desktop.rglob("*"):
+#     if item.is_file():
+#         print(item)
+
+# [item for item in desktop.rglob("*") if item.is_file()]
+
+# list(filter(lambda item: item.is_file(), desktop.rglob("*")))
+# *********************************************
+#
+# Second Largest number in a list
+# # *****************************************************
+
+# lst = [1, 2, 3, 4]
+# for idx, nums in enumerate(lst):
+#     # del(nums)
+#     print(f"{idx}: {nums}")
+# # print(lst)
+# ***********************************
+# for idx, num in enumerate(range(1,13)):
+#     print(f"{idx:5}: {num}")
+# ***********************************
+# for num in range(1,11):
+#     punishment = ("I'm sorry Ma'am!")
+#     print(f"{num:5}: {punishment}")
+# # ************************************************
+
+# # GREATEST COMMON DIVISOR
+# # Recursive function to return gcd of a and b
+# def gcd(a, b):
+#     # Edge cases
+#     if (a == 0):
+#         return b
+#     if (b == 0):
+#         return a
+#     # base case
+#     if (a == b):
+#         return a
+#     # a is greater
+#     if (a > b):
+#         return gcd(a-b, b)
+#     return gcd(a, b-a)
+# print(gcd(8, 12))
+# a = 8
+# b = 12
+# print(f'The GCD of {a} and {b} is: ', gcd(a, b))
+# else:
+# 	print('not found')
+# # import math
+# # print(math.gcd(15, 45))
+# # **************************************************
+# def func(x):
+#     x *= 2
+#     return x
+# num = 15 and 6 # num takes the second value
+# print(num)
+# print(func(num))
+# **************************************************
+
+# def modify_str():
+#     str1 = ("I Love Python")
+#     str1.replace("Love", "Enjoy").split()
+#     # str1 = str1.replace("Love", "Enjoy").split()
+#     return str1
+# print(modify_str())
+# ***************************************************
+
+# # DICTIONARY SORTING
+# browsers = {'google chrome': 2013, 'fire fox': 2012, 'explorer': 2023, 'opera':2021}
+# sorted_dict = sorted(browsers)
+# print(sorted_dict)
+# sorted_by_keys = dict(sorted(browsers.items()))
+# print(sorted_by_keys)
+# sorted_by_values = dict(sorted(browsers.items(), key=lambda x: x[1]))
+# print(sorted_by_values)
+# ***********************************************************************
+
+# # TIMER DECORATOR FUNCTION
+# import time
+# def time_func(func):
+#     def wrapper(*args, **kwargs):
+#         start = time.time()
+#         func(*args, **kwargs)
+#         end = time.time()
+#         print(f'Elapsed time: {(end - start) * 1000:.3f}ms')
+#     return wrapper
+#
+# @time_func
+# def add(num1, num2):
+#     adder = []
+#     print(f"Add {num1} and {num2}")
+#     adder.append(num1 + num2)
+#     print(adder)
+#
+# @time_func
+# def multiply(num1, num2):
+#     mult = []
+#     print(f"Multiply {num1} and {num2}")
+#     mult.append(num1 * num2)
+#     print(mult)
+#
+# add(5, 2)
+# print()
+# multiply(9, 2)
+
+# ******************************************************************************************
+
+"""
 PALINDRUM
 Function to check string is palindrome or not
 """
@@ -91,7 +456,7 @@ Interative solution (Brute Force)
 # input_str = "Tandem Techniques"
 # x = str_iter(input_str)
 # print(x)
-# print(len(input_str))
+# # print(len(input_str))
 # ============================================================================
 
 # # ADD NUMBERS FROM TWO LISTS
@@ -108,7 +473,7 @@ Interative solution (Brute Force)
 # sol = Solution()
 # ans = sol.addnums(l1, l2)
 # print(ans)
-#
+# **************************************************************
 # def addall(n):
 #     sum = 0
 #     for i in range(n):
@@ -121,7 +486,7 @@ Interative solution (Brute Force)
 
 # # STRINGS ... Find first occurrence of uppercase
 # input_str_1 = "tandemTechniques"
-# input_str_2 = "tandem Pechniques"
+# input_str_2 = "tandem techniQues"
 # input_str_3 = "tandemtechniques"
 #
 # def find_upper_case(input_str):
@@ -300,7 +665,7 @@ Interative solution (Brute Force)
 # Find Binary reps of the int, then AND 1
 # ASSUME: Even number plus 1 results odd. Even plus even, results even
 # def is_even_odd(x: int):
-#     if x & 1 == 0:
+#     if x & 1 == 0:  # if x % 2 == 0:
 #         return "Even"
 #     return "Odd"
 # print(is_even_odd(29))
@@ -441,20 +806,6 @@ n = 3
 output:
 ["((()))", "((()())", "(())()", "()(())", "()()()"]
 """
-# def is_valid(combination):
-#     stack = []
-#     for par in combination:
-#         if par == "(":
-#             stack.append(par)
-#         else:
-#             if len(stack) == 0:
-#                 return False
-#             else:
-#                 stack.pop()
-#     return len(stack) == 0
-# combination = "()"
-# print(is_valid(combination))
-#*************       **********        **********
 # def generate(n):
 #     def rec(n, diff, comb, combs):
 #         if diff < 0 or diff > n:
@@ -474,6 +825,20 @@ output:
 #     return combs
 # n = 3
 # print(generate(n))
+#*************       **********        **********
+# def is_valid(combination):
+#     stack = []
+#     for par in combination:
+#         if par == "(":
+#             stack.append(par)
+#         else:
+#             if len(stack) == 0:
+#                 return False
+#             else:
+#                 stack.pop()
+#     return len(stack) == 0
+# combination = "()"
+# print(is_valid(combination))
 # =============================================================================
 """
 UNIQUE PATHS
@@ -501,8 +866,9 @@ Find the number of unique paths from the top left corner of the grid to the bott
 """
 DAILY TEMPERATURES:
 Suppose we have a list of daily temperatures T, we have to return a list such that, for each day in the input, 
-shows how many days we would have to wait until a warmer temperature. If there is no future day for which this is possible, 
-store 0 instead. For example, if T = [73, 74, 75, 71, 69, 72, 76, 73], output will be [1, 1, 4, 2, 1, 1, 0, 0].
+shows how many days we would have to wait until a warmer temperature. If there is no future day for which this 
+is possible, store 0 instead. For example, if T = [73, 74, 75, 71, 69, 72, 76, 73], output will 
+be [1, 1, 4, 2, 1, 1, 0, 0].
 """
 # class Solution(object):
 #    def dailyTemperatures(self, T):
@@ -539,16 +905,18 @@ store 0 instead. For example, if T = [73, 74, 75, 71, 69, 72, 76, 73], output wi
 
 # # LOOP THROUGH ARRAYS
 # nums = [1, 2, 3]
-#
-# # Using Index
-# for i in range(len(nums)):
-#     print(i, nums[i])
-#
-# # Without Index
+# x = 3
+# def loopy(n):
+# # # Using Index
+#     for i in range(n):
+#         print(i, nums[i])
+# loopy(x)
+# #
+# # # Without Index
 # for n in nums:
 #     print(n)
-#
-# # With index and Value
+# #
+# # # With index and Value
 # for i, n in enumerate(nums):
 #     print(i, n)
 # ************************************
@@ -557,6 +925,8 @@ store 0 instead. For example, if T = [73, 74, 75, 71, 69, 72, 76, 73], output wi
 # z = ('Kelvin', 'Niklaus', 'Jenny', 'Craig')
 # print(sorted(z))
 # print(sorted(z, key=lambda K: K[1]))
+# print(sorted(z, key=lambda K: K[2]))
+# print(sorted(z, key=lambda K: K[3]))
 # *********************************************
 # SQUARED NUMBER FUNCTION
 # def get_squared_numbers(numbers):
@@ -570,16 +940,26 @@ store 0 instead. For example, if T = [73, 74, 75, 71, 69, 72, 76, 73], output wi
 # # ******************************************
 
 # # DUPLICATES
+# # Python program to print duplicates from a list of integers
 # numbers = [3, 6, 2, 4, 3, 6, 8, 9]
-#
+# uniques = []
+# duplicates = []
+# for num in numbers:
+#     if num not in uniques:
+#         uniques.append(num)
+#     else:
+#         duplicates.append(num)
+# print(f"Duplicates: {duplicates} \nUniques: {uniques}")
+# ****************************************
+# numbers = [3, 6, 2, 4, 3, 6, 8, 9]
 # for i in range(len(numbers)):
 #     for j in range(i+1, len(numbers)):
 #         # print(numbers[i], numbers[j])
 #         if numbers[i] == numbers[j]:
-#             print(f"{numbers[i]} ia a duplicate")
-#             # break
+#             print(f"{numbers[i]} is a duplicate")
+#             break
+
 # ***********************************
-# # Python program to print duplicates from a list of integers
 # def Repeat(x):
 #     _size = len(x)
 #     duplicates = []
@@ -589,7 +969,6 @@ store 0 instead. For example, if T = [73, 74, 75, 71, 69, 72, 76, 73], output wi
 #             if x[i] == x[j] and x[i] not in duplicates:
 #                 duplicates.append(x[i])
 #     return duplicates
-#
 # list1 = [10, 20, 30, 20, 20, 30, 40, 50, -20, 60, 60, -20, -20]
 # print(Repeat(list1))
 # *******************************************************
@@ -618,11 +997,10 @@ store 0 instead. For example, if T = [73, 74, 75, 71, 69, 72, 76, 73], output wi
 #     sum_of_list = 0
 #     # for i in range(len(lst)):
 #     for nums in lst:
-#         # sum_of_list += lst[i]
 #         sum_of_list += nums
 #         average = sum_of_list/len(lst)
 #     return average
-
+#
 # lst = [15, 9, 55, 41, 35, 20, 62, 49]
 # avrg = Average(lst)
 # print(f"Average of the list = {round(avrg, 2)}")
@@ -647,7 +1025,6 @@ store 0 instead. For example, if T = [73, 74, 75, 71, 69, 72, 76, 73], output wi
 # REMOVE ELEMENT FROM LIST
 # class Solution(object):
 #     def removeElement(self, nums, val):
-#
 #         if val == []:
 #             return 0
 #         else:
@@ -690,6 +1067,24 @@ Example: Given s = "hello", return "olleh".
 # result = soln.reverseString(s)
 # print(result)
 # ***********************************************************
+
+# # REVERSE LINKED LIST
+# class Solution(object):
+#     def reverseList(self, head):
+#         if head == None:
+#             return None
+#         elif head != None and head.next == None:
+#             return head
+#         else:
+#             temp = None
+#             next_node = None
+#             while head != None:
+#                 next_node = head.next
+#                 head.next = temp
+#                 temp = head
+#                 head = next_node
+#             return temp
+# ************************************************************
 """
 MERGE SORTED ARRAYS
 Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.
@@ -715,23 +1110,6 @@ The number of elements initialized in nums1 and nums2 are m and n respectively.
 #             nums1[last] = nums2[last2]
 #             last -= 1
 #             last2 -= 1
-# ************************************************************
-# # REVERSE LINKED LIST
-# class Solution(object):
-#     def reverseList(self, head):
-#         if head == None:
-#             return None
-#         elif head != None and head.next == None:
-#             return head
-#         else:
-#             temp = None
-#             next_node = None
-#             while head != None:
-#                 next_node = head.next
-#                 head.next = temp
-#                 temp = head
-#                 head = next_node
-#             return temp
 # *********************************************************************
 """
 DELETE NODE IN A LINKED LIST
@@ -784,9 +1162,15 @@ So you should return 1, because there is only one bulb is on.
 # class Solution(object):
 #     def bulbSwitch(self, n):
 #         return int(math.sqrt(n))
+# sol = Solution()
+# result = sol.bulbSwitch(3)
+# print(result)
 # ***********************************************************************
-
-# # SEARCH INSERT POSITION
+"""
+Search insert position of K in a sorted array
+Given an array arr[] consisting of N distinct integers and an integer K, the task is to find the index of K, 
+if it’s present in the array arr[].
+"""
 # class Solution:
 #   def searchInsert(self, nums: list[int], target: int) -> int:
 #     l = 0
@@ -802,4 +1186,9 @@ So you should return 1, because there is only one bulb is on.
 #         r = m
 #
 #     return l
-# *********************************************************************
+# nums = [2, 1, 4, 9, 5, 7]
+# target = 9
+# sol = Solution()
+# result = sol.searchInsert(nums, target)
+# print(result)
+# # *********************************************************************

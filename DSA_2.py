@@ -116,11 +116,11 @@ MAXIMUM VALUE
 Maximum value in a python list or infact in any iterable without using max() function
 """
 # # Maximum Number with function
-# numbers = [2, 1, 5, 0, 6, 34]
+# numbers = [2, 1, 59, 0, 6, 34]
 # def find_max(numbers):
 #     maximum = numbers[0]
 #     for number in numbers:
-#         if number > maximum:
+#         if maximum < number:
 #             maximum = number
 #     return maximum
 # result = find_max(numbers)
@@ -265,12 +265,12 @@ uppercase letters, lowercase letters, digits, and special characters
 # import random
 # import string
 # def generate_password(length):
-#     # Define a string containing all possible characters
+# #     # Define a string containing all possible characters
 #     all_chars = string.ascii_letters + string.digits + string.punctuation
-#     # Generate a password using a random selection of characters
+# #     # Generate a password using a random selection of characters
 #     password = "".join(random.choice(all_chars) for i in range(length))
 #     return password
-# # Test the function by generating a password of length 8
+# # # Test the function by generating a password of length 8
 # password = generate_password(8)
 # print(password)
 # ***************************************************
@@ -458,8 +458,8 @@ Create a dictionary from 2 lists
 # reversed_string = s[15:5:-1]
 # print(reversed_string)
 # ==============================================================================
-
-# # VARIABLE VALUES FOR IS AND ==
+#
+# VARIABLE VALUES FOR IS AND ==
 # x = [1, 2, 3]
 # y = [1, 2, 3]
 #

@@ -116,7 +116,7 @@ The re.sub(” +”, ” “, s) uses the regular expression tool to remove extr
 Then we just need to use split to group into segments. The edge case is when the string is empty, 
 which should return 0 segments instead.
 """
-# import re
+# importt re
 # class Solution():
 #     def countSegments(self, s):
 #         """
@@ -129,12 +129,12 @@ which should return 0 segments instead.
 # sol = Solution()
 # result = sol.countSegments(s)
 # print(result)
-"""
-def countSegments(s):
-    count = len(s.split())
-    return count
-print(countSegments("Hey, my instagram username is amankharwal.official"))
-"""
+# """
+# def countSegments(s):
+#     count = len(s.split())
+#     return count
+# print(countSegments("Hey, my instagram username is amankharwal.official"))
+# """
 # =======================================================================================
 """
 THIRD MAXIMUM NUMBER
@@ -217,12 +217,12 @@ Given an integer. Return True if the integer is a power of two; otherwise, retur
 # Power of Three
 # def isPowerOfThree(n):
 #     while (n != 1):
-#         if (n % 5 != 0):
+#         if (n % 3 != 0):
 #             return False
-#         n = n // 5
+#         n = n // 3
 #     else:
 #         return True
-# print(isPowerOfThree(120))
+# print(isPowerOfThree(81))
 # =================================================================================================
 
 # # MOVE ZEROS FORWARD
@@ -250,7 +250,7 @@ and your output should return true
 #         return n == 1
 #     else:
 #         return 0
-# print(isUgly(26))
+# print(isUgly(16))
 # ==============================================================================================
 """
 ADD DIGITS OF A WHOLE NUMBERS
@@ -261,7 +261,7 @@ till you get a single-digit value as the sum.
 #     while num > 9:
 #         num = (num % 10) + (num // 10)
 #     return num
-# print(addDigits(1232))
+# print(addDigits(1241))
 # ==============================================================================================
 
 # PATHS
@@ -281,19 +281,28 @@ till you get a single-digit value as the sum.
 MAJORITY ELEMENT
 Given an array nums of size n, return the majority element.
 """
-# def majorityElement(nums):
-#     count = 0
-#     major_element = 0
-#     for num in nums:
-#         if count == 0:
-#             major_element = num
-#         if major_element == num:
-#             count += num
-#         else:
-#             count -= num
-#     return major_element
-# nums = [2,2,1,1,1,2,2]
-# print(majorityElement(nums))
+# def majorityElement(arr):
+#     # Size of the given array
+#     n = len(arr)
+#
+#     for i in range(n):
+#         # Selected element is arr[i]
+#         cnt = 0
+#         for j in range(n):
+#             # Counting the frequency of arr[i]
+#             if arr[j] == arr[i]:
+#                 cnt += 1
+#
+#         # Check if frequency is greater than n/2
+#         if cnt > (n // 2):
+#             return arr[i]
+#
+#     return -1
+#
+# arr = [2, 2, 1, 1, 2, 2]
+# ans = majorityElement(arr)
+# print("The majority element is:", ans)
+
 # ==================================================================================
 """
 Pascal’s Triangle using Python
@@ -308,7 +317,8 @@ In the rows of a Pascal’s Triangle, each number is the sum of two numbers dire
 #         for i in range(1, row):
 #             triangle[row][i] = triangle[row - 1][i - 1] + triangle[row -1][i]
 #     return triangle
-# print(generatePascal(5))
+# print(generatePascal(6))
+# print()
 # ============================================================================================
 """
 Excel Sheet Column Title using Python
@@ -387,7 +397,7 @@ Given an array containing a range of numbers from 0 to n with a missing number,
 find the missing number in the input array.
 """
 # def findMissingNumbers(n):
-#     numbers = set(n)
+#     numbers = n
 #     output = []
 #     for num in range(1, n[-1]):
 #         if num not in numbers:
@@ -419,8 +429,8 @@ In this situation, the output should be 0,1 because the sum of 1 at index 0 and 
 #                 for y in range(i + 1, length):
 #                     if nums[i] + nums[j] + nums[x] + nums[y] == target:
 #                         return [i, j, x, y]
-# nums = [3, 4, 1, 7, 4, 9, 2]
-# target = 14
+# nums = [3, 4, 1, 7, 4, 9, 1]
+# target = 9
 # print(foursum(nums, target))
 # ===========================================================================================
 """
@@ -442,7 +452,65 @@ For example, 5×5 gives 25, so the square root of 25 is 5.
 #             left = mid + 1
 #             sqrt = mid
 #     return sqrt
-# print(mySqrt(49))
+# print(mySqrt(37))
+
+
+# Python 3 program to find floor(sqrt(x)
+
+# Returns floor of square root of x
+
+
+# def floorSqrt(x):
+#
+# 	# Base cases
+# 	if (x == 0 or x == 1):
+# 		return x
+#
+# 	# Do Binary Search for floor(sqrt(x))
+# 	start = 1
+# 	end = x//2
+# 	while (start <= end):
+# 		mid = (start + end) // 2
+#
+# 		# If x is a perfect square
+# 		if (mid*mid == x):
+# 			return mid
+#
+# 		# Since we need floor, we update
+# 		# answer when mid*mid is smaller
+# 		# than x, and move closer to sqrt(x)
+# 		if (mid * mid < x):
+# 			start = mid + 1
+# 			ans = mid
+#
+# 		else:
+#
+# 			# If mid*mid is greater than x
+# 			end = mid-1
+#
+# 	return ans
+#
+#
+# # driver code
+# x = 11
+# print(floorSqrt(x))
+
+# class Solution():
+#     def mySqrt(self, x: int) -> int:
+#         if x == 0:
+#             return 0
+#         last_guess = x / 2.0
+#         while True:
+#             guess = (last_guess + x / last_guess) / 2
+#             if abs(guess - last_guess) < 0.000001:  # example threshold
+#                 return int(guess)
+#             last_guess = guess
+#
+# x = 43
+# sol = Solution()
+# result =  sol.mySqrt(x)
+# print(result)
+
 # ========================================================================================
 """
 PLUS ONE
@@ -460,7 +528,7 @@ look at the input and output array mentioned below:
 #     else:
 #         digits[n] += 1
 #     return digits
-# digits = [1, 2, 5, 7, 3, 9]
+# digits = [1, 2, 5, 7, 3, 6]
 # print(plusOne(digits))
 # =================================================================================
 """
@@ -500,16 +568,15 @@ combined list is also in a sorted manner.
 #     mergedlist.extend(i if i else j)
 #     return mergedlist
 # list1 = [1, 3, 5, 7, 9, 12]
-# list2 = [2, 4, 6, 8, 10, 11]
+# list2 = [2, 4, 6, 8, 10, 11, 13]
 # print(merge2Lists(list1, list2))
 # ======================================================================================
 """
 LONGEST COMMON PREFIX
 To solve the Longest Common Prefix problem, you need to find the most common prefix in all the strings
-of an array. For example, given an array of strings [“flower”, “flow”, “flight”], in this array,
+of an array. For example, given an array of strings [“flower”, “flow”, “flog”], in this array,
 the most common prefix among the first two items is “flo”
 """
-# strs = ["flower", "flow", "flog"]
 # def longestCommonPrefix(strs):
 #     l = len(strs[0])
 #     for i in range(1, len(strs)):
@@ -519,6 +586,8 @@ the most common prefix among the first two items is “flo”
 #             if length == 0:
 #                 return 0
 #     return strs[0][0:length]
+#
+# strs = ["flower", "flow", "flog"]
 # print(longestCommonPrefix(strs))
 # =========================================================================================
 """
